@@ -31,11 +31,7 @@ const Landingpage = () => {
             <img src={arrow}/>
           </div>
         </div>
-
-        <div className='sneakpeak'>
-          <img src={Sneakpeak} alt="" />
-        </div>
-
+        <div className='sneakpeak'><img src={Sneakpeak} alt=""/></div>
       </div>
     </div>
   </div>
