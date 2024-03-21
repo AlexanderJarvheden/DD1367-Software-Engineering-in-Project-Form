@@ -13,8 +13,9 @@ img {
   min-height: 100vh;
   width: 85vw;
   max-width: 1900px;
-  margin: 0rem auto;
+  margin: 0 ; /* Updated margin property */
 }
+
 body {
   max-width: 100%;
   overflow-x: hidden;

@@ -6,6 +6,8 @@
     font-style: normal;
     font-weight: 500;
     line-height: 60px;
+
+    width: 420px;
     /* 125% */
 }
 
@@ -14,7 +16,6 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    width: 420px;
 }
 
 .sneakpeak {
@@ -44,9 +45,7 @@
 .landingpage-signup-box {
     display: grid;
     grid-template-columns: 1fr;
-    /* Define a single column */
-    grid-gap: 30px;
-    /* Set the gap between rows */
+    gap: 60px;
 }
 
 .landingpage-logo {
