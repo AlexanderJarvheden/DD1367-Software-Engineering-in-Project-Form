@@ -1,0 +1,81 @@
+.header {
+    display: flex;
+    width: 1440px;
+    height: 104px;
+    padding: 20px 160px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #483D8B;
+    background: var(--Blank, #FFF);
+}
+
+.header-midline {
+    display: flex;
+    width: 1440px;
+    padding: 0px 96px;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-logo {
+    display: flex;
+    width: 228px;
+    height: 39px;
+    padding: 0px 11.027px 0px 6.368px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-midbuttons {
+    display: flex;
+    padding: 4px 8px;
+    align-items: flex-start;
+    border-radius: 8px;
+    /* Rounded corners */
+    border: 1px solid transparent;
+    /* Add a border */
+    display: flex;
+    gap: 64px;
+}
+
+.home-button,
+.contact-button {
+    color: var(--Darks, #1C1735);
+    text-align: center;
+    background: var(--Light, #F1F1F4);
+    /* Button */
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    /* 142.857% */
+    text-transform: uppercase;
+    display: flex;
+    padding: 4px 8px;
+    align-items: flex-start;
+    border-radius: 8px;
+    /* Rounded corners */
+    border: 1px solid transparent;
+    /* Add a border */
+}
+
+
+.login-button {
+    display: flex;
+    font-family: Inter, sans-serif;
+    color: var(--White, #ffffff);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    /* 142.857% */
+    text-transform: uppercase;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: var(--Secondary-Brand-purple, #574ED5);
+}

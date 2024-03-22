@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* This CSS centers the text block on the page */
+    .centered-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-family: 'Arial', sans-serif; /* Example font */
+    }
+    /* Additional styling to match your design */
+    h1 {
+      color: #4CAF50; /* Example color */
+      margin: 0;
+      font-size: 48px; /* Example font size */
+    }
+    p {
+      color: #333; /* Example color */
+      margin: 10px 0 20px;
+      font-size: 24px; /* Example font size */
+    }
+    .email {
+      color: #888; /* Example color */
+      font-size: 20px; /* Example font size */
+    }
+  </style>
+</head>
+
+<! –– Dashboard ––>
+<body>
+    <div class="dashboard">
+        <!-- Left-aligned Button -->
+        <div class="left">
+            <a href='/'>
+                <img src="images/loopbox.png" alt="Your Logo" id="logo">
+            </a>
+        </div>
+    
+        <!-- Center-aligned Buttons -->
+        <div class="center">
+            <button onclick="location.href='/'">Home</button>
+            <button onclick="location.href='/contact'">Contact</button>
+        </div>
+    
+        <!-- Right-aligned Buttons -->
+        <div class="right">
+            <button onclick="location.href='/signup'">Sign Up</button>
+            <button onclick="location.href='/login'">Login</button>
+        </div>
+    </div>
+    <!-- Oklart vad detta gör ja hade ingen fil som hette så -->
+  <script src="js/script.js"></script>
+
+  <div class="centered-text">
+    <h1>Help your business to become circular!</h1>
+    <p>Your best circular assistant!</p>
+  </div>
+
+</body>
+
+</html>
