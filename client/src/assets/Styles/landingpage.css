@@ -18,12 +18,6 @@
     -webkit-text-fill-color: transparent;
 }
 
-.sneakpeak {
-    width: 776px;
-    height: 396px;
-    border-radius: 8px;
-    /* background: url(<path-to-image>) lightgray 0px -0.104px / 99.356% 100.053% no-repeat; */
-}
 
 .landingpage-background {
     display: flex;
@@ -37,15 +31,26 @@
 
 .landingpage-innerbackground {
     display: flex;
-    padding: 100px;
     align-items: center;
+    padding: 100px;
     gap: 50px;
 }
 
-.landingpage-signup-box {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 60px;
+.inner-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sneakpeak {
+    width: 776px;
+    height: 396px;
+    border-radius: 8px;
+}
+
+.body-gap {
+    display: "flex";
+    gap: 50px;
 }
 
 .landingpage-logo {
