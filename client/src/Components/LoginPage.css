@@ -1,0 +1,86 @@
+.login-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.inputs,
+.submit-login {
+    align-items: flex-start;
+    width: 320px;
+    /* Definiera bredden för att matcha dina input och knappar */
+}
+
+
+.login-title {
+    /* Login to use all tools! */
+    background: var(--logofinal1, linear-gradient(270deg, #483D8B 0.04%, #EE7A7A 28.16%, #F6CF56 73.68%, #75C7C5 106.7%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Futura;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 60px;
+    width: 320px;
+    margin-bottom: 20px;
+}
+
+
+.inputs {
+    /* Buttons layout */
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.input {
+    /* Actual Buttons */
+    display: flex;
+    width: 320px;
+    padding: 16px 24px 16px 16px;
+    align-items: center;
+    gap: 16px;
+    border-radius: 8px;
+    border: 1px solid #000;
+}
+
+.input input {
+    /* Buttons-text style */
+    color: var(--Text, #5B586F);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Futura;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    outline: none;
+    border: none;
+}
+
+.submit-login {
+    display: flex;
+    width: 320px;
+    padding: 16px 16px 16px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 8px;
+    background: var(--Secondary-Brand-purple, #574ED5);
+}
+
+.submit {
+    /* Login button text */
+    color: var(--Light, #F1F1F4);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Futura;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    cursor: pointer;
+}
