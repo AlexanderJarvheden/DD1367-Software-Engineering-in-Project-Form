@@ -9,7 +9,6 @@ import arrow from '../Assets/Icons/left_arrow.svg'
 const Landingpage = () => {
   return (
     <div>
-      <Navigationbar />
       <div className='landingpage-background'>
         <div className='landingpage-innerbackground'>
           <div className='inner-content'>
@@ -22,10 +21,11 @@ const Landingpage = () => {
             <div className='landingpage-darktext'>
               Your best circular assistant !
             </div>
-            <button className='landingpage-email-label'>
+            
+            <div type='email' className='landingpage-email-label'>
               <img src={email} alt="Email icon" />
-              <span className='landingpage-email-text'>Enter your work email</span>
-            </button>
+              <input type="email" placeholder="Enter your work email" className='landingpage-email-text'/>
+            </div>
             <button className='landingpage-signup-label'>
               <span className='landingpage-signup-text'>Sign up free</span>
               <img src={arrow} alt="Arrow icon" />
