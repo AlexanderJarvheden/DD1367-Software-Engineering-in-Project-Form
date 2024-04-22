@@ -8,11 +8,11 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const port = 3000;
 
-app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+app.use(express.static(path.join(__dirname, '..', 'client', 'src')));
 
 // Root route serving the first page with the center button
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'client', 'build', 'App.js'));
+    res.sendFile(path.join(__dirname, '..', 'client', 'src', 'App.js'));
 });
 
 app.get('/login', (req, res) => {
