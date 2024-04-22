@@ -1,0 +1,70 @@
+/* Variables for colors (adjust the actual values to match your design) */
+:root {
+    --black-10: rgba(0, 0, 0, 0.10);
+    --white-100: #FFF;
+    --black-5: rgba(0, 0, 0, 0.05);
+    --Primary-Brand: #1C1C1C;
+}
+
+.sidebar {
+    width: 212px;
+    height: 920px;
+    flex-shrink: 0;
+    border-right: 1px solid var(--black-10);
+    background: var(--white-100);
+    /* Add other styles like padding or margin as needed */
+}
+
+.menu-item {
+    display: flex;
+    height: 48px;
+    padding: 12px 59px 12px 12px;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+    cursor: pointer;
+    /* You might want to adjust the padding or other styles for other items */
+}
+
+.menu-item:hover {
+    background-color: var(--black-5);
+    /* Slightly darker on hover */
+    /* You can also change other properties like color if needed */
+}
+
+.menu-item.active {
+    border-radius: 8px;
+    background: var(--black-5);
+}
+
+.menu-text {
+    color: var(--Primary-Brand);
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.menu-icon {
+    width: 24px;
+    height: 24px;
+    /* Add your icon backgrounds here */
+}
+
+.logo {
+    width: 116.551px;
+    /* Width of the content box */
+    height: 49px;
+    /* Height of the content box */
+    padding: 16px;
+    /* Padding inside the content box */
+    margin: 26px 79.4px 20px 16px;
+    /* Adjusted bottom margin */
+    box-sizing: border-box;
+    /* Include padding and border in the width and height totals */
+    display: flex;
+    align-items: center;
+    /* Center the image vertically within the padding */
+    justify-content: center;
+    /* Center the image horizontally within the padding */
+}
