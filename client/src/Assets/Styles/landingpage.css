@@ -1,0 +1,131 @@
+.xxl-heading {
+
+    /* Heading/XXXL */
+    font-family: Futura;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 60px;
+
+    width: 420px;
+    /* 125% */
+}
+
+.gradient-text {
+    background: var(--logofinal1, linear-gradient(270deg, #483D8B 0.04%, #EE7A7A 28.16%, #F6CF56 73.68%, #75C7C5 106.7%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.landingpage-background {
+    display: flex;
+    width: 1440px;
+    padding-bottom: 170px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 66px;
+    background: #FFF;
+}
+
+.landingpage-innerbackground {
+    display: flex;
+    align-items: center;
+    padding: 100px;
+    gap: 50px;
+}
+
+.inner-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sneakpeak {
+    width: 776px;
+    height: 396px;
+    border-radius: 8px;
+}
+
+.body-gap {
+    display: "flex";
+    gap: 50px;
+}
+
+.landingpage-logo {
+    display: flex;
+    width: 320px;
+    height: 92px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px
+        /* Gap is a property in css that does not work in react */
+}
+
+.landingpage-darktext {
+    color: var(--Darks, #1C1735);
+    /* Heading/XXL */
+    font-family: Futura;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px;
+    /* 125% */
+    width: 420px;
+}
+
+.landingpage-email-label {
+    display: flex;
+    width: 320px;
+    padding: 16px 24px 16px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 8px;
+    border: 1px solid #000;
+}
+
+.landingpage-email-text {
+    color: var(--Text, #5B586F);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Futura;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    border: none;
+    /* 150% */
+}
+
+.landingpage-signup-label {
+    display: flex;
+    width: 320px;
+    padding: 16px 16px 16px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 8px;
+    background: var(--Secondary-Brand-purple, #574ED5);
+}
+
+.landingpage-signup-text {
+    color: var(--Light, #F1F1F4);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Futura;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* 150% */
+}
+
+.landingpage-signup-arrow {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    padding: 4.5px 4.503px 4.497px 4.5px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
