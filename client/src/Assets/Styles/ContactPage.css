@@ -1,0 +1,60 @@
+.mainContainer {
+    display: flex;
+    padding: 100px;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.leftContainer {
+    display: flex;
+    width: 420px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.image {
+    width: 320.225px;
+    height: 92px;
+    flex-shrink: 0;
+}
+
+.rainbowText {
+
+    /* Heading/XXXL */
+    font-family: Futura;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 60px;
+    /* 125% */
+    background: var(--logofinal1, linear-gradient(270deg, #483D8B 0.04%, #EE7A7A 28.16%, #F6CF56 73.68%, #75C7C5 106.7%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.descriptionText {
+    color: var(--Darks, #1C1735);
+
+    /* Heading/XXL */
+    font-family: Futura;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px;
+    /* 125% */
+}
+
+.emailText {
+    color: var(--Darks, #1C1735);
+
+    /* Body/XL */
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    /* 140% */
+}

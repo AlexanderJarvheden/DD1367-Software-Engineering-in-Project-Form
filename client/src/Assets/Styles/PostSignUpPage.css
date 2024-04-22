@@ -1,0 +1,42 @@
+.mainContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+}
+
+
+.thankYouText {
+
+    /* Heading/XXXL */
+    font-family: Futura;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 60px;
+    /* 125% */
+    background: var(--logofinal1, linear-gradient(270deg, #483D8B 0.04%, #EE7A7A 28.16%, #F6CF56 73.68%, #75C7C5 106.7%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 420px;
+}
+
+.instructionsText {
+    color: var(--Darks, #1C1735);
+
+    /* Heading/XXL */
+    font-family: Futura;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px;
+    /* 125% */
+    width: 420px;
+
+}
