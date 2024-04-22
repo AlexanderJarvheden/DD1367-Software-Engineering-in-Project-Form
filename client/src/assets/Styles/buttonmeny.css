@@ -13,6 +13,14 @@
     border-right: 1px solid var(--black-10);
     background: var(--white-100);
     /* Add other styles like padding or margin as needed */
+    overflow: hidden;
+    position: fixed;
+    /* Fixed position to stay in view */
+    left: 0;
+    /* Align to the left side of the window */
+    top: 0;
+    /* Align to the top of the window */
+    transition: width 0.5s ease;
 }
 
 .menu-item {
@@ -70,4 +78,21 @@
     /* Center the image vertically within the padding */
     justify-content: center;
     /* Center the image horizontally within the padding */
+}
+
+/* Add the new open and closed class styles */
+.sidebar.open {
+    /* Styles for when the sidebar is open */
+    width: 212px;
+    /* other styles */
+}
+
+.sidebar.closed {
+    /* Styles for when the sidebar is closed */
+    width: 0;
+    padding: 0;
+    /* Hide the content */
+    overflow: hidden;
+    /* Transition for the closing effect */
+    transition: width 0.3s ease;
 }

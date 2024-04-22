@@ -21,10 +21,10 @@ const Landingpage = () => {
             <div className='landingpage-darktext'>
               Your best circular assistant !
             </div>
-            
+
             <div type='email' className='landingpage-email-label'>
               <img src={email} alt="Email icon" />
-              <input type="email" placeholder="Enter your work email" className='landingpage-email-text'/>
+              <input type="email" placeholder="Enter your work email" className='landingpage-email-text' />
             </div>
             <button className='landingpage-signup-label'>
               <span className='landingpage-signup-text'>Sign up free</span>
@@ -38,6 +38,6 @@ const Landingpage = () => {
       </div>
     </div>
   )
-} 
+}
 
 export default Landingpage

@@ -9,7 +9,7 @@ import projects_icon from '../Assets/Icons/projects_icon.svg'
 import account_icon from '../Assets/Icons/account_icon.svg'
 
 
-function Sidebar() {
+function Sidebar({ isOpen }) {
     const [activeItem, setActiveItem] = useState('dashboard');
 
     const menuItems = [
@@ -23,8 +23,10 @@ function Sidebar() {
 
     ];
 
+    const sidebarClass = isOpen ? "sidebar open" : "sidebar closed";
+
     return (
-        <div className="sidebar">
+        <div className={sidebarClass}>
             <div className="logo">
                 <img src={menu_logo} alt="Menu Logo" />
             </div>
