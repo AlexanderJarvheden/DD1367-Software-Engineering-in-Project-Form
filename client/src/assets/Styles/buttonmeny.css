@@ -18,16 +18,19 @@
 .menu-item {
     display: flex;
     height: 48px;
-    padding: 12px 59px 12px 12px;
+    padding: 12px 90px 12px 12px;
     align-items: center;
     gap: 12px;
     align-self: stretch;
     cursor: pointer;
+
+
     /* You might want to adjust the padding or other styles for other items */
 }
 
 .menu-item:hover {
     background-color: var(--black-5);
+
     /* Slightly darker on hover */
     /* You can also change other properties like color if needed */
 }
