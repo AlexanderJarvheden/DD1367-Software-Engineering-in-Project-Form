@@ -11,11 +11,11 @@ import PostSignUpPage from './Components/PostSignUpPage.js';
 
 function App() {
   return (
+    
     <div className="App">
-      <Navigationbar/>
-      <PostSignUpPage/>
+    <Navigationbar/>
+    <PostSignUpPage/>
     </div>
-
   );
 }
 

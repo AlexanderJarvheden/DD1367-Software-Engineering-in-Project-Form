@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 import '../Assets/Styles/landingpage.css'
 import Navigationbar from './Navigationbar'
 import Sneakpeak from '../Assets/Images/Landingpage_sneakpeak.png'
