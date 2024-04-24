@@ -8,6 +8,7 @@ import email from '../Assets/Icons/Email.svg'
 import arrow from '../Assets/Icons/left_arrow.svg'
 
 const Landingpage = () => {
+    const navigate = useNavigate();
   return (
     <div>
       <div className='landingpage-background'>
@@ -27,7 +28,7 @@ const Landingpage = () => {
               <img src={email} alt="Email icon" />
               <input type="email" placeholder="Enter your work email" className='landingpage-email-text'/>
             </div>
-            <button className='landingpage-signup-label'>
+            <button className='landingpage-signup-label' onClick={() => navigate("/signup")}>
               <span className='landingpage-signup-text'>Sign up free</span>
               <img src={arrow} alt="Arrow icon" />
             </button>
