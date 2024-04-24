@@ -3,7 +3,7 @@ import Loopbox_logo from '../Assets/Images/Loopbox_logo.png'
 import '../Assets/Styles/navigationbar.css'
 import {HiOutlineBars3} from "react-icons/hi2";
 import {Box, Drawer, ListItem, ListItemButton, ListItemIcon, ListItemText, } from "@mui/material"
-
+import { useNavigate } from 'react-router-dom';
 
 /**
  * Written by Alexander Järvheden
