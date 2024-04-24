@@ -12,6 +12,7 @@ import {Box, Drawer, ListItem, ListItemButton, ListItemIcon, ListItemText, } fro
  */
 
 const Navigationbar = () => {
+    const navigate = useNavigate();
 
     // Used to make sure that the navigation bar is responsible with smaller devices as well
     // Initializes the openMenu to be false
@@ -35,12 +36,14 @@ const Navigationbar = () => {
     return (
         <div className='header'>
             <div className='header-midline'>
-                <div className='header-logo'><img src={Loopbox_logo} alt=""/></div>
+                <div className='header-logo' onClick={() => navigate("/")}>
+                    <img src={Loopbox_logo} alt=""/></div>
                 <div className='header-midbuttons'>
-                    <button className='home-button'>HOME</button>
-                    <button className='contact-button'>CONTACT</button>
+                    <button className='home-button' onClick={() => navigate("/")}>HOME</button>
+                    <button className='contact-button' onClick={() => navigate("/contact")}>CONTACT</button>
                 </div>
-                <button className='login-button'>LOG IN</button>
+                <button className='sign-up' onClick={() => navigate("/signup")}>SIGN UP</button>
+                <button className='login-button' onClick={() => navigate("/login")}>LOG IN</button>
             </div>
         </div>
     )
