@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom";
+import { Outlet } from 'react-router-dom'
 import '../Assets/Styles/landingpage.css'
 import Navigationbar from './Navigationbar'
 import Sneakpeak from '../Assets/Images/Landingpage_sneakpeak.png'
@@ -9,7 +9,12 @@ import arrow from '../Assets/Icons/left_arrow.svg'
 
 const Landingpage = () => {
   return (
-    <div>
+	<>
+	<div>
+		<Outlet/>
+	</div>
+	{
+	<div>
       <div className='landingpage-background'>
         <div className='landingpage-innerbackground'>
           <div className='inner-content'>
@@ -38,6 +43,8 @@ const Landingpage = () => {
         </div>
       </div>
     </div>
+	}
+	</>
   )
 } 
 
