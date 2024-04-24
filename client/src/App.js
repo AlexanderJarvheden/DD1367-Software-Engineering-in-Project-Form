@@ -1,3 +1,4 @@
+import {Route, Routes } from "react-router-dom"
 import './App.css';
 import './Assets/Styles/landingpage.css'
 import Landingpage from './Components/Landingpage.js';
@@ -11,12 +12,16 @@ import PostSignUpPage from './Components/PostSignUpPage.js';
 
 function App() {
   return (
-    
-    <div className="App">
-    <Navigationbar/>
-    <PostSignUpPage/>
-    </div>
-  );
+    <>
+    <Navigationbar />   
+    <Routes>
+        <Route path="/" element={<Landingpage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<LoginPage />} />
+    </Routes>
+    </>
+  )
 }
 
 export default App;
