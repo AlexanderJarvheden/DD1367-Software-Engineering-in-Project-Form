@@ -12,7 +12,12 @@ app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
-  });
+});
+
+app.post('/signup', (req, res) => {
+	const { name, email, password, phonenumber, company } = req.body;
+	res.send(req.body);
+});
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
