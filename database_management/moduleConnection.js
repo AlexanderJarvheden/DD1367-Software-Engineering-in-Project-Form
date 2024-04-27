@@ -43,17 +43,17 @@ const User = sequelize.define('User', {
     timestamps: false
 });
 
-// funktion för att lägga till en användare i databasen
-async function addUser(userData) {
-    try {
-        const newUser = await User.create(userData);
-        console.log('User added successfully:', newUser.toJSON());
-        return newUser; // retunera det skapade användar objektet
-    } catch (error) {
-        console.error('Error adding user:', error);
-        throw error; // kasta error om fel
-    }
-}
+// // funktion för att lägga till en användare i databasen
+// async function addUser(userData) {
+//     try {
+//         const newUser = await User.create(userData);
+//         console.log('User added successfully:', newUser.toJSON());
+//         return newUser; // retunera det skapade användar objektet
+//     } catch (error) {
+//         console.error('Error adding user:', error);
+//         throw error; // kasta error om fel
+//     }
+// }
 
 // test funktion med lite exempeldata
 async function testAddUser() {
@@ -72,3 +72,29 @@ async function testAddUser() {
     }
 }
 testAddUser();
+
+/**
+ * Method to add user to database
+ * @param {Object} userData 
+ * @returns logged message for either success of failure to add user
+ */
+async function addUser(userData) {
+
+    const { name, email, password, phonenumber, company } = userData;
+
+    // Där har ni alla variabler med fyllda värden som användare använt
+    // Notera att vi inte har UserID. Den får ni skapa.
+    // Notera att vi inte har UserAgreement. Vi kommer inte skapa ett konto om den rutan inte är ifylld.
+    
+    try {
+        const newUser = await User.create(placeholder);
+        console.log('User added successfully:', newUser.toJSON());
+        return newUser; // retunera det skapade användar objektet
+    } catch (error) {
+        console.error('Error adding user:', error);
+        throw error; // kasta error om fel
+    }
+}
+
+// För att vi ska kunna kalla på den genom POST metoden i servers index.js
+export { addUser };
