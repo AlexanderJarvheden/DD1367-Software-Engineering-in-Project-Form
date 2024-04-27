@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { addUser } from '../database_management/moduleConnection.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -8,16 +9,25 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const port = 3000;
 
+app.use(express.json());
+
 app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
 });
 
-app.post('/signup', (req, res) => {
-	const { name, email, password, phonenumber, company } = req.body;
-	res.send(req.body);
+app.post('/signup', async (req, res) => {
+    try {
+        const newUser = await addUser(req.body);
+        res.json({ status: 'success', message: 'User added successfully.', newUser: newUser.toJSON() });
+    } catch (error) {
+        console.error('Error adding user:', error);
+        res.status(400).json({ status: 'error', message: 'Could not add user.' });
+    }
 });
+
+//Ingen error handling atm
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
