@@ -7,13 +7,13 @@ import Navigationbar from './Components/Navigationbar.js';
 import PinLibraryOfTools from './Components/PinLibraryOfTools.js';
 import ContactPage from './Components/ContactPage.js';
 import PostSignUpPage from './Components/PostSignUpPage.js';
-
+import ChooseTeam from './Components/ChooseTeam.js'
 
 function App() {
   return (
     <div className="App">
       <Navigationbar/>
-      <PostSignUpPage/>
+      <ChooseTeam/>
     </div>
 
   );
