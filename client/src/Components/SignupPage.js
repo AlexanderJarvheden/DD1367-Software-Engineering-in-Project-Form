@@ -1,26 +1,76 @@
 import React from 'react';
-import '../Assets/Styles/SignupPage.css'; // Make sure the path matches your file structure
+import { useState } from 'react';
+import '../Assets/Styles/SignupPage.css';
 
 function SignupPage() {
-  // Add your form handlers and state management as needed
+	const [inputs, setInputs] = useState({
+		name: '',
+		email: '',
+		password: '',
+		phonenumber: '',
+		company: ''
+	});
 
-  return (
-    <div className="signup-container">
-      <h2 className="signup-title">Sign up to try our tools!</h2>
-      <form className="signup-form">
-        <input type="text" placeholder="Name" />
-        <input type="email" placeholder="Username (e-mail)" />
-        <input type="password" placeholder="Password" />
-        <input type="tel" placeholder="Phone number" />
-        <input type="text" placeholder="Company" />
-        <div className="signup-terms">
-          <input type="checkbox" id="terms" />
-          <label htmlFor="terms">I agree with the terms and conditions and GDPR</label>
-        </div>
-        <button type="submit" className="signup-button">Sign up free →</button>
-      </form>
-    </div>
-  );
+	const handleChange = (e) => {
+		const {name, value} = e.target;
+		setInputs(values => ({...values, [name]: value}))
+	}
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		if (!inputs.email.includes('@')) {
+			alert('Please enter a valid email address.');
+			return; 
+		}
+		if (inputs.password.length < 5) {
+			alert('Your password must be at least 8 characters long.');
+			return; 
+		}
+		console.log(inputs.name);
+		console.log(inputs.email);
+		console.log(inputs.password);
+		console.log(inputs.phonenumber);
+		console.log(inputs.company);
+		fetch('/signup', {
+			method: 'POST',
+			headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify(inputs),
+		})
+		.then(response => {
+			if (!response.ok) { // Check if the response status code was not okay
+				return response.json().then(errorData => {
+					// Optionally, handle specific server-sent error messages
+					throw new Error(`Server responded with ${response.status}: ${errorData.message}`);
+				});
+			}
+			return response.json(); // This will only parse the response as JSON if the response was okay
+		})
+		.then(data => {
+			// Handle success (like redirecting to a thank you page or showing a success message)
+			//window.location.href = 'http://localhost:3000/contact';
+		})
+		.catch((error) => {
+			console.error('Error:', error);
+			// Handle error (like showing an error message to the user)
+			//window.location.href = 'http://localhost:3000/login';
+		});
+	}
+
+	return (
+		<div className="signup-container">
+		<h2 className="signup-title">Sign up to try our tools!</h2>
+			<form className="signup-form" onSubmit={handleSubmit}>
+				<input type="text" name="name" placeholder="Name" value={inputs.name} onChange={handleChange}/>
+				<input type="email" name="email" placeholder="Username (e-mail)" value={inputs.email} onChange={handleChange}/>
+				<input type="password" name="password" placeholder="Password" value={inputs.password} onChange={handleChange}/>
+				<input type="tel" name="phonenumber" placeholder="Phone number" value={inputs.phonenumber} onChange={handleChange}/>
+				<input type="text" name="company" placeholder="Company" value={inputs.company} onChange={handleChange}/>
+				<div className="signup-terms">
+					<input type="checkbox" id="terms" />
+					<label htmlFor="terms">I agree with the terms and conditions and GDPR</label>
+				</div>
+				<button type="submit" className="signup-button">Sign up</button>
+			</form>
+		</div>
+	);
 }
-
 export default SignupPage;

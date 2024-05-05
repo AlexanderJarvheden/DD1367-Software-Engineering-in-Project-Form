@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { addUser } from '../database_management/moduleConnection.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -8,28 +9,26 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const port = 3000;
 
-app.use(express.static(path.join(__dirname, '..', 'client', 'src')));
+app.use(express.json());
 
-// Root route serving the first page with the center button
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'client', 'src', 'App.js'));
+app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
 });
 
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'client', 'build', 'Components', 'LoginPage.js'));
+app.post('/signup', async (req, res) => {
+    try {
+        const newUser = await addUser(req.body);
+        res.json({ status: 'success', message: 'User added successfully.', newUser: newUser.toJSON() });
+    } catch (error) {
+        console.error('Error adding user:', error);
+        res.status(400).json({ status: 'error', message: 'Could not add user.' });
+    }
 });
 
-app.get('/signup', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'client', 'public', 'pages', 'signup.html'));
-});
-
-app.get('/contact', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'client', 'public', 'pages', 'contact.html'));
-});
-
-app.use(express.static(path.join(__dirname, '..', 'client', 'public')));
+//Ingen error handling atm
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
-
