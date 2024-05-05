@@ -1,0 +1,123 @@
+.introWorksheet {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: #FCFCFA;
+    box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.10) inset;
+}
+
+.intro {
+    display: flex;
+    padding: 14px 16px;
+    align-items: flex-start;
+    gap: 10px;
+    background: #FCFCFA;
+    border: none;
+    box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.10) inset;
+
+}
+
+.introTxt {
+    color: var(--Neutral-100, #0A0A0A);
+
+    /* Text M/Medium */
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    /* 142.857% */
+    letter-spacing: -0.084px;
+}
+
+.worksheet {
+    display: flex;
+    padding: 14px 16px;
+    align-items: flex-start;
+    gap: 10px;
+    background: #FCFCFA;
+    box-shadow: 0px -3px 0px 0px #483D8B inset;
+    border: none;
+}
+
+.worksheetTxt {
+    color: var(--Neutral-100, #0A0A0A);
+
+    /* Text M/Medium */
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    /* 142.857% */
+    letter-spacing: -0.084px;
+}
+
+.title {
+    color: var(--EIG-purple-adaption, #532E8F);
+    text-align: center;
+
+    /* Heading/XXL */
+    font-family: Futura;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px;
+    /* 125% */
+    top: 105px;
+    left: 161px;
+}
+
+.bulletList {
+    width: 510px;
+    color: #000;
+
+    /* Heading/M */
+    font-family: Futura;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    /* 125% */
+}
+
+.initialUseCycle {
+    width: 311px;
+    height: 18px;
+    flex-shrink: 0;
+    color: #000;
+
+    /* Heading/M */
+    font-family: Futura;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    /* 125% */
+}
+
+.boxes {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.box {
+    border-radius: 20px;
+    border: 2px solid #6E6D73;
+    background: #F1F0F7;
+    width: 277px;
+    height: 253px;
+}
+
+.boxTxt {
+    color: var(--EIG-purple-adaption, #532E8F);
+
+    /* Heading/S */
+    font-family: Futura;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    /* 142.857% */
+}
