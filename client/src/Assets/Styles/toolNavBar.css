@@ -1,0 +1,24 @@
+.container {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 42px;
+}
+
+.button {
+    display: flex;
+    padding: 4px 12px 4px 4px;
+    align-items: center;
+    gap: 4px;
+    border-radius: 8px;
+    background: var(--Neutrals-Gray-200, #F1F0F7);
+}
+
+.headerText {
+    color: var(--Light-Bulma, #000);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Futura;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
