@@ -1,41 +1,28 @@
--- Active: 1699539369336@@psql-dd1368-ht23.sys.kth.se@5432@pvkbox@public
 CREATE TABLE Users (
-    UserID VARCHAR(50) PRIMARY KEY,
+    UserID SERIAL PRIMARY KEY,
+    Mailaddress String Not NULL,
+    Phonenumber INT NOT NULL,
     Name VARCHAR(100) NOT NULL,
-    Password VARCHAR(100) NOT NULL
+    Password VARCHAR(100) NOT NULL,
+    CompanyName VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE User_Phonenumber (
-    Phonenumber INTEGER,
-    UserID VARCHAR(50),
-    PRIMARY KEY (Phonenumber),
+    Phonenumber INT,
+    UserID INT,
+    PRIMARY KEY (Phonenumber, UserID),
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
 CREATE TABLE User_Mailaddress (
     Mailaddress VARCHAR(255),
-    UserID VARCHAR(50),
-    PRIMARY KEY (Mailaddress),
-    FOREIGN KEY (UserID) REFERENCES Users(UserID)
-);
-
-CREATE TABLE User_Agreement (
-    UserAgreementID VARCHAR(50) PRIMARY KEY,
-    AgreementText VARCHAR(255) NOT NULL,
-    AgreementDate DATE NOT NULL,
-    UserID VARCHAR(50),
-    FOREIGN KEY (UserID) REFERENCES Users(UserID)
-);
-
-CREATE TABLE User_Details (
-    UserID VARCHAR(50) PRIMARY KEY,
-    DateOfBirth DATE,
-    City VARCHAR(100),
+    UserID INT,
+    PRIMARY KEY (Mailaddress, UserID),
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
 CREATE TABLE User_Schedule (
-    UserID VARCHAR(50),
+    UserID INT,
     EventDate DATE,
     Time INT,
     Comment VARCHAR(255),
@@ -43,74 +30,80 @@ CREATE TABLE User_Schedule (
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
+CREATE TABLE User_Plan (
+    UserID INT PRIMARY KEY,
+    PlanType VARCHAR(255) NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+
 CREATE TABLE Admin (
-    UserID VARCHAR(50) PRIMARY KEY,
+    UserID INT PRIMARY KEY,
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
 CREATE TABLE Employee (
-    UserID VARCHAR(50) PRIMARY KEY,
+    UserID INT PRIMARY KEY,
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
-CREATE TABLE WorksAt (
-    UserID VARCHAR(50),
-    CompanyID VARCHAR(50),
-    PRIMARY KEY (UserID, CompanyID),
-    FOREIGN KEY (UserID) REFERENCES Users(UserID),
-    FOREIGN KEY (CompanyID) REFERENCES Company(CompanyID)
-); 
-
 CREATE TABLE Company (
-    CompanyID VARCHAR(50) PRIMARY KEY,
-    CompanyName VARCHAR(100) NOT NULL
+    CompanyName VARCHAR(100) PRIMARY KEY
 );
 
 CREATE TABLE Project (
-    ProjectID VARCHAR(50) PRIMARY KEY,
-    CompanyID VARCHAR(50) NOT NULL,
+    ProjectID SERIAL PRIMARY KEY,
+    ProjectName VARCHAR(50) NOT NULL,
+    CompanyName VARCHAR(100) NOT NULL,
     FOREIGN KEY (CompanyID) REFERENCES Company(CompanyID)
 );
 
+CREATE TABLE ProjectTeam (
+    ProjectID INT,
+    UserID INT,
+    PRIMARY KEY (UserID, ProjectID)
+    FOREIGN KEY (ProjectID) REFERENCES Project(ProjectID)
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+
 CREATE TABLE Post_it_Note (
-    NoteID VARCHAR(50) PRIMARY KEY,
-    ProjectID VARCHAR(50),
-    UserID VARCHAR(50) NOT NULL,
+    NoteID SERIAL PRIMARY KEY,
+    NoteName VARCHAR(50) NOT NULL,
+    ProjectID INT NOT NULL,
+    UserID INT NOT NULL,
     FOREIGN KEY (ProjectID) REFERENCES Project(ProjectID),
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
 CREATE TABLE Note_Coords (
-    NoteID VARCHAR(50),
+    NoteID INT PRIMARY KEY,
     x_coord INT NOT NULL,
     y_coord INT NOT NULL,
-    PRIMARY KEY (NoteID),
     FOREIGN KEY (NoteID) REFERENCES Post_it_Note(NoteID)
 );
 
 CREATE TABLE Note_Date (
-    NoteID VARCHAR(50),
+    NoteID INT PRIMARY KEY,
     CreatedDate DATE NOT NULL,
     LastModifiedDate DATE NOT NULL,
-    PRIMARY KEY (NoteID),
     FOREIGN KEY (NoteID) REFERENCES Post_it_Note(NoteID)
 );
 
 CREATE TABLE ProjectPlan (
-    ProjectPlanID VARCHAR(50) PRIMARY KEY,
-    ProjectID VARCHAR(50) NOT NULL,
+    ProjectPlanID SERIAL PRIMARY KEY,
+    ProjectPlanName VARCHAR(50) NOT NULL,
+    ProjectID INT NOT NULL,
     FOREIGN KEY (ProjectID) REFERENCES Project(ProjectID)
 );
 
 CREATE TABLE Tools (
-    ToolID VARCHAR(50) PRIMARY KEY,
+    ToolID SERIAL PRIMARY KEY,
     ToolType VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE ProjectPlanTools (
-    ProjectPlanID VARCHAR(50),
-    ToolID VARCHAR(50),
-    ArrayIndex INT NOT NULL,
+    ProjectPlanID INT,
+    ToolID INT,
+    ArrayIndex INT,
     Completed BOOL,
     PRIMARY KEY (ProjectPlanID, ToolID, ArrayIndex),
     FOREIGN KEY (ProjectPlanID) REFERENCES ProjectPlan(ProjectPlanID),
@@ -118,30 +111,67 @@ CREATE TABLE ProjectPlanTools (
 );
 
 CREATE TABLE Worksheet (
-    WorksheetID VARCHAR(50) PRIMARY KEY,
-    ProjectID VARCHAR(50) NOT NULL,
-    WorksheetName VARCHAR(100) NOT NULL,
+    WorksheetID SERIAL PRIMARY KEY,
+    WorksheetName VARCHAR(50),
+    ProjectID INT NOT NULL,
     FOREIGN KEY (ProjectID) REFERENCES Project(ProjectID)
 );
 
 CREATE TABLE WorksheetNode (
-    NodeID VARCHAR(50) PRIMARY KEY,
-    NodeName VARCHAR(100) NOT NULL
+    NodeID SERIAL PRIMARY KEY,
+    NodeName VARCHAR(100) 
 );
 
 CREATE TABLE WorksheetNodeAssignment (
-    WorksheetID VARCHAR(50),
-    NodeID VARCHAR(50),
+    WorksheetID INT,
+    NodeID INT,
     PRIMARY KEY (WorksheetID, NodeID),
     FOREIGN KEY (WorksheetID) REFERENCES Worksheet(WorksheetID),
     FOREIGN KEY (NodeID) REFERENCES WorksheetNode(NodeID)
 );
 
 CREATE TABLE WorksheetNodeCoords (
-    NodeID VARCHAR(50),
+    NodeID INT,
     x_coord INT NOT NULL,
     y_coord INT NOT NULL,
     PRIMARY KEY (NodeID),
     FOREIGN KEY (NodeID) REFERENCES WorksheetNode(NodeID)
 );
 
+CREATE TABLE ProductJourneyMapping (
+    ProjectID INT,
+    InitialCycleTime VARCHAR(100),
+    1stUse VARCHAR(255),
+    2ndUse VARCHAR(255),
+    3rdUse VARCHAR(255),
+    xthUse VARCHAR(255),
+    PRIMARY KEY (ProjectID),
+    FOREIGN KEY (ProjectID) REFERENCES Project(ProjectID)
+);
+
+CREATE TABLE InterestInfluence (
+    InterestInfluenceID SERIAL PRIMARY KEY,
+    ProjectID INT NOT NULL,
+    Comment VARCHAR(255),
+    FOREIGN KEY (ProjectID) REFERENCES Project(ProjectID)
+);
+
+CREATE TABLE StakeholderNote (
+    StakeID SERIAL PRIMARY KEY,
+    Comment VARCHAR(255),
+);
+
+CREATE TABLE StakeholderNoteAssignment (
+    InterestInfluenceID INT,
+    StakeID INT,
+    PRIMARY KEY (InterestInfluenceID, StakeID),
+    FOREIGN KEY (InterestInfluenceID) REFERENCES InterestInfluence(InterestInfluenceID),
+    FOREIGN KEY (StakeID) REFERENCES StakeholderNote(StakeID)
+);
+
+CREATE TABLE StakeholderNoteCoords (
+    StakeID INT PRIMARY KEY,
+    x_coord INT NOT NULL,
+    y_coord INT NOT NULL,
+    FOREIGN KEY (StakeID) REFERENCES StakeholderNote(StakeID)
+);
