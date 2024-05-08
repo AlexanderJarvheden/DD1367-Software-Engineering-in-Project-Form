@@ -1,10 +1,78 @@
-import React from 'react'
-import ToolNavBar from '../Components/ToolNavBar.js'
-import '../Assets/Styles/pjMappingWS.css'
-import colors from '../Assets/Images/PJMcolors.svg'
+import React, { useEffect, useState } from 'react';
+import Konva from 'konva';
+
+import ToolNavBar from '../Components/ToolNavBar.js';
+import colors from '../Assets/Images/PJMcolors.svg';
+import '../Assets/Styles/pjMappingWS.css';
 
 const PJMWorksheet = () => {
   const navBarStyle = { position: 'fixed', top: '27px', left: '145px', width: '100%' };
+
+  const [textCounter, setTextCounter] = useState(0);
+
+  const initializeKonva = () => {
+    const stage = new Konva.Stage({
+      container: 'container',
+      width: 340,
+      height: 300,
+    });
+
+    const layer = new Konva.Layer();
+
+    const simpleText = new Konva.Text({
+      x: stage.width() / 2,
+      y: 15,
+      text: 'Simple Text',
+      fontSize: 30,
+      fontFamily: 'Calibri',
+      fill: 'green',
+    });
+
+    simpleText.offsetX(simpleText.width() / 2);
+
+    const complexText = new Konva.Text({
+      x: 20,
+      y: 60,
+      text: "COMPLEX TEXT\n\nAll the world's a stage, and all the men and women merely players. They have their exits and their entrances.",
+      fontSize: 18,
+      fontFamily: 'Calibri',
+      fill: '#555',
+      width: 300,
+      padding: 20,
+      align: 'center',
+    });
+
+    const rect = new Konva.Rect({
+      x: 20,
+      y: 60,
+      stroke: '#555',
+      strokeWidth: 5,
+      fill: '#ddd',
+      width: 300,
+      height: complexText.height(),
+      shadowColor: 'black',
+      shadowBlur: 10,
+      shadowOffsetX: 10,
+      shadowOffsetY: 10,
+      shadowOpacity: 0.2,
+      cornerRadius: 10,
+    });
+
+    layer.add(simpleText);
+    layer.add(rect);
+    layer.add(complexText);
+
+    stage.add(layer);
+  };
+
+  const handleSpawnKonva = () => {
+    initializeKonva();
+    setTextCounter(textCounter + 1);
+  };
+
+  useEffect(() => {
+    initializeKonva();
+  }, []);
 
   return (
     <div>
@@ -19,6 +87,7 @@ const PJMWorksheet = () => {
       </div>
       <img src={colors} alt='' style={{ position: 'fixed', top: '-90px', left: '30px' }} />
       <span className='title' style={{ position: 'absolute' }}>Product Journey Mapping</span>
+      <div id="container"></div>
       <div style={{position: 'absolute', top: '224px', left: '175px'}}>
         <li className='bulletList'>Does it return to the biosphere?</li>
         <li className='bulletList'>Get reused by someone else?</li>
@@ -38,10 +107,10 @@ const PJMWorksheet = () => {
         <div className='box'></div>
         <div className='box'></div>
       </div>
+      <button onClick={handleSpawnKonva} style={{ position: 'absolute', top: '20px', left: '20px' }}>Spawn Konva Text</button>
+      <p>Total spawned text boxes: {textCounter}</p>
     </div>
-  )
+  );
+};
 
-
-}
-
-export default PJMWorksheet
+export default PJMWorksheet;
