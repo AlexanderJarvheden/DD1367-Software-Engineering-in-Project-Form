@@ -30,8 +30,13 @@ import path from '../Assets/Icons/path.png'
 import board from '../Assets/Icons/board.png'
 import combo from '../Assets/Icons/combo.png'
 import thumbdown from '../Assets/Icons/thumbdown.png'
+import turquoisecircle from '../Assets/Icons/turquoisecircle.svg'
+import DrawingMap from '../Assets/Icons/DrawingMap.png'
+import measure from '../Assets/Icons/measurement.png'
+import darts from '../Assets/Icons/darts.png'
 
-
+import PJMButton from '../Tools/ToolButtons/PJMButton.js'
+import FutureScenariosButton from '../Tools/ToolButtons/FutureScenariosButton.js'
 
 
 const PinLibraryOfTools = () => {
@@ -121,12 +126,13 @@ const PinLibraryOfTools = () => {
                 </button>
                 <span className='researchText'>Interviews</span>
               </div>
-              <div className='toolBox'>
+              {/* <div className='toolBox'>
                 <span className='researchText'>Future</span>
                 <img src={redcircle} alt="" className='circle' />
                 <img src={wisdom} alt="" className='icon' />
                 <span className='researchText'>Scenarios</span>
-              </div>
+              </div> */}
+              <FutureScenariosButton />
               <div className='toolBox'>
                 <span className='researchText'>Competitor</span>
                 <img src={redcircle} alt="" className='circle' />
@@ -255,11 +261,49 @@ const PinLibraryOfTools = () => {
           </div>
           <div className='ideationContainer'>
             <div className='categoryText'>Implementation</div>
+            <div className='iconRow'>
+              <div className='toolBox'>
+                <span className='implementationText'>Mid-Way</span>
+                <img src={turquoisecircle} alt="" className='circle' />
+                <img src={DrawingMap} alt="" className='icon' />
+                <span className='implementationText'>Evaluation</span>
+              </div>
+              <PJMButton />
+              <div className='toolBox'>
+                <span className='implementationText'>Design</span>
+                <img src={turquoisecircle} alt="" className='circle' />
+                <img src={darts} alt="" className='icon' />
+                <span className='implementationText'>Evaluation</span>
+              </div>
+              <div className='toolBox'>
+                <span className='implementationText'>Effort/</span>
+                <img src={turquoisecircle} alt="" className='circle' />
+                <img src={DrawingMap} alt="" className='icon' />
+                <span className='implementationText'>Impact</span>
+              </div>
+              <div className='toolBox'>
+                <span className='implementationText'>Service</span>
+                <img src={turquoisecircle} alt="" className='circle' />
+                <img src={DrawingMap} alt="" className='icon' />
+                <span className='implementationText'>Blueprint</span>
+              </div>
+            </div>
+
+          </div>
+          <div className='ideationContainer'>
+            <div className='categoryText'>Snygga knappar</div>
+            <div className='iconRow'>
+              <PJMButton />
+              <FutureScenariosButton />
+
+            </div>
+
           </div>
         </div>
       </div>
     </div>
   )
 }
+
 
 export default PinLibraryOfTools
