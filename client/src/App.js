@@ -5,6 +5,7 @@ import PJMWorksheet from './Tools/PJMWorksheet.js'
 import Landingpage from './Components/Landingpage.js';
 import SignupPage from './Components/SignupPage';
 import LoginPage from './Components/LoginPage.js';
+import PlaceholderForHome from './Components/PlaceholderForHome.js';
 import Navigationbar from './Components/Navigationbar.js';
 import PinLibraryOfTools from './Components/PinLibraryOfTools.js';
 import ContactPage from './Components/ContactPage.js';
@@ -20,6 +21,10 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/home" element={<PlaceholderForHome />} />
+        <Route path="/pinlibraryoftools" element={<PinLibraryOfTools />} />
+        <Route path="/postsignuppage" element={<PostSignUpPage />} />
+        <Route path="/pjmworksheet" element={<PJMWorksheet />} />
     </Routes>
     </>
   )
