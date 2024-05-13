@@ -1,0 +1,76 @@
+.filter-buttons {
+
+    width: calc(100% - 280px);
+    height: 28px;
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    position: relative;
+    /* Keep position fixed */
+    top: 120px;
+    /* Adjust top position */
+    left: 140px;
+    /* Adjust left position */
+    margin-top: 10px;
+    /* Add margin-top to create space between the cards */
+    z-index: 1000;
+}
+
+.filter-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 8px;
+    background: var(--Success-light, #4DEFEB);
+    /* Default fallback color */
+    color: var(--Blank, #FFF);
+    /* Default fallback color */
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    /* Ensure 'Inter' font is loaded or provide a fallback */
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    /* This equates to 142.857% of 14px */
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border: none;
+}
+
+.filter-btn:hover {
+    transform: scale(1.1);
+    /* Slight scale on hover for interaction feedback */
+}
+
+.filter-btn.active {
+    background: var(--Secondary-Brand-purple, #574ED5);
+    /* Different background for the active state */
+}
+
+
+.search-btn {
+    display: flex;
+    width: 133px;
+    height: 32px;
+    padding: 0 0 0 200px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.search-btn2 {
+    display: flex;
+    width: 23.201px;
+    height: 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    cursor: pointer;
+    background: var(--Success-light, #FFF);
+    border: none;
+}

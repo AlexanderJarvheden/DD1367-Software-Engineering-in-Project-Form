@@ -3,7 +3,7 @@ import '../Assets/Styles/LoginPage.css'
 //import left_icon from '../Assets/left.svg'
 
 
-function LoginPage () {
+function LoginPage() {
 
 
     return (
