@@ -38,7 +38,7 @@ function App() {
 
     return (
         <>
-            {loggedIn ? <DashboardHeader /> : <Navigationbar />}
+            {loggedIn ? <DashboardPage /> : <Navigationbar />}
             <Routes>
               <Route exact path="/" element={ loggedIn ? <PlaceholderForHome /> : <Landingpage />} />
               <Route path="/contact" element={<ContactPage />} />
