@@ -1,6 +1,6 @@
 .header {
     display: flex;
-    width: 1440px;
+    width: auto;
     height: 104px;
     padding: 20px 160px;
     justify-content: center;
@@ -61,7 +61,6 @@
     border: 1px solid transparent;
     /* Add a border */
 }
-
 
 .login-button {
     display: flex;

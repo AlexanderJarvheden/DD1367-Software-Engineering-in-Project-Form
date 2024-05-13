@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 import '../Assets/Styles/landingpage.css'
 import Navigationbar from './Navigationbar'
 import Sneakpeak from '../Assets/Images/Landingpage_sneakpeak.png'
@@ -7,17 +8,18 @@ import email from '../Assets/Icons/Email.svg'
 import arrow from '../Assets/Icons/left_arrow.svg'
 
 const Landingpage = () => {
+    const navigate = useNavigate();
   return (
     <div>
       <div className='landingpage-background'>
-        <div className='landingpage-innerbackground'>
+        {/* <div className='landingpage-innerbackground'> */}
           <div className='inner-content'>
             <div className='xxl-heading gradient-text'>
               Help your business<br />to become circular!
             </div>
-            <div className='landingpage-logo'>
+              {/* <div className='landingpage-logo'>
               <img src={Logo} alt="" />
-            </div>
+              </div>  */}
             <div className='landingpage-darktext'>
               Your best circular assistant !
             </div>
@@ -26,7 +28,7 @@ const Landingpage = () => {
               <img src={email} alt="Email icon" />
               <input type="email" placeholder="Enter your work email" className='landingpage-email-text' />
             </div>
-            <button className='landingpage-signup-label'>
+            <button className='landingpage-signup-label' onClick={() => navigate("/signup")}>
               <span className='landingpage-signup-text'>Sign up free</span>
               <img src={arrow} alt="Arrow icon" />
             </button>
@@ -34,7 +36,7 @@ const Landingpage = () => {
           <div className='sneakpeak'>
             <img src={Sneakpeak} alt="Sneakpeak image" />
           </div>
-        </div>
+        {/* </div> */}
       </div>
     </div>
   )
