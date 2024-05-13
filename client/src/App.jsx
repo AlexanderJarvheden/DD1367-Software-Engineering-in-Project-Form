@@ -12,7 +12,7 @@ import ContactPage from './Components/ContactPage.js';
 import PostSignUpPage from './Components/PostSignUpPage.js';
 import ToolNavBar from './Components/ToolNavBar.js';
 import ChooseTeam from './Components/ChooseTeam.js';
-import DashboardHeader from './Components/DashboardHeader.js';
+import DashboardPage from './Components/DashboardPage.js';
 
 import './App.css';
 // import './Assets/Styles/landingpage.css'
