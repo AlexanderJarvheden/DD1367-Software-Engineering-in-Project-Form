@@ -15,18 +15,18 @@ const ToolNavBar = (props) => {
             width: '24px',
             height: '24px'
           }} />
-          <span className='headerText'>Instructions</span>
+          <span className='buttonText'>Instructions</span>
         </button>
         <button className='button'>
           <img src={reduceScreen} alt='' style={{
             width: '24px',
             height: '24px'
           }} />
-          <span className='headerText'>Condense planner</span>
+          <span className='buttonText'>Condense planner</span>
         </button>
         <button className='button'>
           <img src={fullscreen} alt='' />
-          <span className='headerText'>Enlarge planner</span>
+          <span className='buttonText'>Enlarge planner</span>
         </button>
       </div>
     </div>

@@ -10,10 +10,11 @@
     align-items: center;
     gap: 4px;
     border-radius: 8px;
+    border: none;
     background: var(--Neutrals-Gray-200, #F1F0F7);
 }
 
-.headerText {
+.buttonText {
     color: var(--Light-Bulma, #000);
     font-feature-settings: 'clig' off, 'liga' off;
     font-family: Futura;
