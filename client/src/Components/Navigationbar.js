@@ -37,13 +37,16 @@ const Navigationbar = () => {
         <div className='header'>
             <div className='header-midline'>
                 <div className='header-logo' onClick={() => navigate("/")}>
-                    <img src={Loopbox_logo} alt=""/></div>
+                    <img src={Loopbox_logo} alt=""/>
+                </div>
                 <div className='header-midbuttons'>
                     <button className='home-button' onClick={() => navigate("/")}>HOME</button>
                     <button className='contact-button' onClick={() => navigate("/contact")}>CONTACT</button>
                 </div>
-                <button className='sign-up' onClick={() => navigate("/signup")}>SIGN UP</button>
-                <button className='login-button' onClick={() => navigate("/login")}>LOG IN</button>
+                <div>
+                    <button className='signup' onClick={() => navigate("/signup")}>SIGN UP</button>
+                    <button className='login-button' onClick={() => navigate("/login")}>LOG IN</button>
+                </div>
             </div>
         </div>
     )
