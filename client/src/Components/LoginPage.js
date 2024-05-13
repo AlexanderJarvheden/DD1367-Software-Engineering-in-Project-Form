@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import '../Assets/Styles/SignupPage.css';
+import '../Assets/Styles/LoginPage.css';
+
 //import left_icon from '../Assets/left.svg'
 
 
@@ -57,11 +58,10 @@ function LoginPage() {
 
         <div>
             <div className='login-box'>
-                <div className="login-title">
+                <span className="login-title">
                     Log in to use all tools!
-                </div>
+                </span>
                 <div className="inputs">
-                <h2 className="signup-title">Sign up to try our tools!</h2>
                 <form className="signup-form" onSubmit={handleSubmit}>
                     <input type="email" name="email" placeholder="Username (e-mail)" value={inputs.email} onChange={handleChange}/>
                     <input type="password" name="password" placeholder="Password" value={inputs.password} onChange={handleChange}/>
