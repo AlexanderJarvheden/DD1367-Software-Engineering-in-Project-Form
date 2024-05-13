@@ -11,15 +11,16 @@ import account_icon from '../Assets/Icons/account_icon.svg'
 
 function Sidebar({ isOpen }) {
     const [activeItem, setActiveItem] = useState('dashboard');
+    const navigate = useNavigate();
 
     const menuItems = [
-        { name: 'dashboard', text: 'Dashboard', icon: dashboard_icon },
-        { name: 'library', text: 'Library', icon: library_icon },
-        { name: 'planner', text: 'Planner', icon: library_icon },
-        { name: 'social', text: 'Social', icon: social_icon },
-        { name: 'teams', text: 'Teams', icon: teams_icon },
-        { name: 'projects', text: 'Projects', icon: projects_icon },
-        { name: 'account', text: 'Account', icon: account_icon },
+        { name: 'dashboard', text: 'Dashboard', icon: dashboard_icon, path: '/dashboard' },
+        { name: 'library', text: 'Library', icon: library_icon, path: '/library' },
+        { name: 'planner', text: 'Planner', icon: library_icon, path: '/home' },
+        { name: 'social', text: 'Social', icon: social_icon, path: '/social' },
+        { name: 'teams', text: 'Teams', icon: teams_icon, path: '/teams' },
+        { name: 'projects', text: 'Projects', icon: projects_icon, path: '/projects' },
+        { name: 'account', text: 'Account', icon: account_icon, path: '/account' },
 
     ];
 
@@ -35,7 +36,10 @@ function Sidebar({ isOpen }) {
                 <div
                     key={item.name}
                     className={`menu-item ${activeItem === item.name ? 'active' : ''}`}
-                    onClick={() => setActiveItem(item.name)}
+                    onClick={() => {
+                        setActiveItem(item.name);
+                        navigate(item.path)
+                    }}
                 >
                     <div className="menu-icon">
                         {<img src={item.icon} alt={`${item.text} icon`} />}
