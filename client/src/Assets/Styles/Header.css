@@ -1,0 +1,48 @@
+.header {
+    width: 1227px;
+    height: 72px;
+    flex-shrink: 0;
+    border-bottom: 1px solid var(--black-10);
+    background: var(--white-100);
+    margin-left: 213px;
+    margin-bottom: -85px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    /* Adjust padding if needed */
+}
+
+.header-button {
+    display: flex;
+    width: 48px;
+    height: 28px;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: none;
+    /* No border unless you want one */
+    background-color: transparent;
+    /* Transparent background unless you want a color */
+    cursor: w-resize;
+}
+
+.button-logo {
+    width: 100%;
+    /* Adjust if needed to fit the button */
+    height: 100%;
+    /* Adjust if needed to fit the button */
+}
+
+.header.expanded {
+    margin-left: 0px;
+    /* Keep the header in its original position when sidebar is expanded */
+
+}
+
+.header.expanded .header-button {
+    cursor: e-resize;
+    /* Change cursor to pointer when header is expanded */
+}
