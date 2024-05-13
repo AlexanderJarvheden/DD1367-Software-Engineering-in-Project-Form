@@ -1,0 +1,51 @@
+.sidebar2 {
+    width: 75px;
+    height: 920px;
+    flex-shrink: 0;
+    border-right: 1px solid var(--black-10);
+    background: var(--white-100);
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: width 0.5s ease;
+}
+
+.menu-item2 {
+    display: flex;
+    height: 40px;
+    align-self: stretch;
+    padding: 10px 0px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.menu-item2:hover {
+    background-color: var(--black-5);
+    border-radius: 80px;
+}
+
+.menu-item2.active {
+    border-radius: 8px;
+    background: var(--black-5);
+}
+
+.menu-icon2 {
+    width: 24px;
+    height: 24px;
+}
+
+.logo2 {
+    width: auto;
+    height: 49px;
+    padding: 8px 0;
+    margin: 50px 0 10px 16px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}

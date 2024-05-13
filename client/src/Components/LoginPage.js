@@ -4,7 +4,7 @@ import '../Assets/Styles/SignupPage.css';
 //import left_icon from '../Assets/left.svg'
 
 
-function LoginPage () {
+function LoginPage() {
 
     const [inputs, setInputs] = useState({
         email: '',

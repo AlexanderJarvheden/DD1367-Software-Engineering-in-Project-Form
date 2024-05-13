@@ -1,0 +1,113 @@
+.snake-container {
+    width: 511px;
+    height: 360px;
+    position: fixed;
+    top: 175px;
+    left: 860px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+}
+
+.start {
+    color: var(--Darks, #1C1735);
+    font-family: 'Futura', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    text-transform: uppercase;
+    padding-left: 5px;
+    text-align: left;
+    align-self: flex-start;
+}
+
+.end {
+    color: var(--Darks, #1C1735);
+    font-family: 'Futura', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 0px;
+    text-transform: uppercase;
+    padding-left: 150px;
+    position: absolute;
+    /* Position absolutely within the container */
+    bottom: 0;
+    /* Align to the bottom */
+    left: 100;
+    /* Align to the right */
+}
+
+
+
+.node-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    /* Needed to position nodes relative to the snake */
+    z-index: 2;
+    /* Ensure nodes are above the snake */
+}
+
+.node-icon {
+    width: 45px;
+    height: 45px;
+    position: relative;
+    /* Change from absolute to relative */
+    left: 0;
+    /* Reset the left position */
+    top: 0;
+    /* Reset the top position */
+    transform: translate(0, -50%);
+    /* Update the transform to center the node icon vertically */
+    flex-shrink: 0;
+    border-radius: 50%;
+    z-index: 3;
+
+    /* Increase the z-index to ensure the node icons appear above the snake */
+}
+
+
+.snake-icon {
+    width: 100%;
+    /* Makes the snake path stretch to fill the container */
+    height: auto;
+    /* Maintain aspect ratio */
+    position: absolute;
+    /* Overlap it in the container */
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+}
+
+.node-title {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: 'Futura', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: var(--Primary-Brand, #483D8B);
+}
+
+.node-description {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 0px;
+    text-transform: uppercase;
+    color: var(--Primary-Brand, #483D8B);
+    padding-left: 1px;
+    padding-top: 22px;
+}
