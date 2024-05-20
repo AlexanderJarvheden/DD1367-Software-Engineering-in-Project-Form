@@ -1,8 +1,13 @@
+CREATE TABLE Company (
+    CompanyName VARCHAR(100) PRIMARY KEY
+);
+
 CREATE TABLE Users (
     UserID SERIAL PRIMARY KEY,
     Username VARCHAR(100) NOT NULL,
     UserPassword VARCHAR(100) NOT NULL,
-    CompanyName VARCHAR(100) NOT NULL
+    CompanyName VARCHAR(100) NOT NULL,
+    FOREIGN KEY (CompanyName) REFERENCES Company(CompanyName)
 );
 
 CREATE TABLE User_Phonenumber (
@@ -42,10 +47,6 @@ CREATE TABLE Admin (
 CREATE TABLE Employee (
     UserID INT PRIMARY KEY,
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
-);
-
-CREATE TABLE Company (
-    CompanyName VARCHAR(100) PRIMARY KEY
 );
 
 CREATE TABLE Project (
