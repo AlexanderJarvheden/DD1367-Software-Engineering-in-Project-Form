@@ -17,7 +17,7 @@ function Sidebar({ isOpen }) {
     const menuItems = [
         { name: 'dashboard', text: 'Dashboard', icon: dashboard_icon, path: '/dashboard' },
         { name: 'library', text: 'Library', icon: library_icon, path: '/library' },
-        { name: 'planner', text: 'Planner', icon: library_icon, path: '/home' },
+        { name: 'planner', text: 'Planner', icon: library_icon, path: '/planner' },
         { name: 'social', text: 'Social', icon: social_icon, path: '/social' },
         { name: 'teams', text: 'Teams', icon: teams_icon, path: '/teams' },
         { name: 'projects', text: 'Projects', icon: projects_icon, path: '/projects' },

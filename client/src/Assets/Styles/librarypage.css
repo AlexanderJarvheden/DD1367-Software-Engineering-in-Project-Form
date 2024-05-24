@@ -7,8 +7,8 @@
     /* Center children vertically */
     min-height: 100vh;
     /* Full viewport height, adjust as necessary */
-    width: 100%;
     /* Full width */
+    background: var(--Light, #F1F1F4);   
 }
 
 .card {
@@ -22,4 +22,8 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 16px;
     margin: 10px;
+}
+
+.snakeBackground {
+    background: var(--Accent, #DEDDE4);
 }

@@ -33,12 +33,14 @@ const ToolLibraryPage = () => {
     const filteredCards = cardData.filter(card => activeFilter === 'All' || card.category === activeFilter);
 
     return (
-        <div className="tool-library-page">
-            <FilterButtons setActiveFilter={setActiveFilter} />
-            {filteredCards.map((card, index) => (
-                <Cards key={index} title={card.title} description={card.description} onUse={card.onUse} />
-            ))}
-            <Snaker nodes={nodes} />
+        <div>
+            <div className="tool-library-page" style={{width: '817px;', background: 'var(--Light, #F1F1F4);'}}>
+                <FilterButtons setActiveFilter={setActiveFilter} />
+                {filteredCards.map((card, index) => (
+                    <Cards key={index} title={card.title} description={card.description} onUse={card.onUse} />
+                ))}
+            </div>
+            <div className='snakeBackground'><Snaker nodes={nodes} /></div>
         </div>
     );
 };
