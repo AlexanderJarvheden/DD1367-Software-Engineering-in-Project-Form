@@ -33,13 +33,19 @@ const Navigationbar = () => {
         }
     ]
         return (
-            <div className='header'>
-                    <img src={Loopbox_logo} alt="Loopbox Logo" onClick={() => navigate("/")} />
-                    <button className='home-button' style={{position: 'relative', left: '150px'}} onClick={() => navigate("/")}>HOME</button>
-                    <button className='contact-button' onClick={() => navigate("/contact")}>CONTACT</button>
+            <div className='headerNavbar'>
+                <div className='header-midline'>
+                    <div className='header-logo' onClick={() => navigate("/")}>
+                        <img src={Loopbox_logo} alt=""/>
+                    </div>
+                    <div className='header-midbuttons'>
+                        <button className='home-button' onClick={() => navigate("/")}>HOME</button>
+                        <button className='contact-button' onClick={() => navigate("/contact")}>CONTACT</button>
+                    </div>
                     <button className='login-button' style={{position: 'relative', left: '150px'}} onClick={() => navigate("/signup")}>SIGN UP</button>
                     <button className='login-button' onClick={() => navigate("/login")}>LOG IN</button>
             </div>
+        </div>
         )
     // return (
     //     <div className='header'>
