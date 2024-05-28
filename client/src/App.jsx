@@ -14,6 +14,7 @@ import ToolNavBar from './Components/ToolNavBar.js';
 import ChooseTeam from './Components/ChooseTeam.js';
 import DashboardPage from './Components/DashboardPage.js';
 import ProcessLine from './Components/ProcessLine.js';
+import Library from './Pages/ToolLibraryPage.js'
 
 import './App.css';
 // import './Assets/Styles/landingpage.css'
@@ -41,7 +42,7 @@ function App() {
         <>
             {loggedIn ? <DashboardPage /> : <Navigationbar />}
             <Routes>
-              <Route exact path="/" element={ loggedIn ? <PlaceholderForHome /> : <Landingpage />} />
+              <Route exact path="/" element={ loggedIn ? <DashboardPage /> : <Landingpage />} />
               <Route path="/planner" element={<ProcessLine />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/signup" element={<SignupPage />} />
@@ -51,7 +52,8 @@ function App() {
               <Route path="/postsignuppage" element={<PostSignUpPage />} />
               <Route path="/pjmworksheet" element={<PJMWorksheet />} />
               <Route path="/toolnavbar" element={<ToolNavBar />} />
-              <Route path="/chooseteam" element={<ChooseTeam />} />
+              <Route path="/teams" element={<ChooseTeam />} />
+              <Route path="/library" element={<Library />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
         </>

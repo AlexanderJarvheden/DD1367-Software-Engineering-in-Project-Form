@@ -42,14 +42,14 @@
     margin-top: 20px;
 }
 
-.container {
+.containerCards {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: -70px;
-    left: -82px;
-    padding-top: 210px;
+    top: 150px;
+    left: -450px;
+    padding-top: 20px;
 }
 
 .container+.container {
