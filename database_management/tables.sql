@@ -1,14 +1,17 @@
+CREATE TABLE Company (
+    CompanyName VARCHAR(100) PRIMARY KEY
+);
+
 CREATE TABLE Users (
     UserID SERIAL PRIMARY KEY,
-    Mailaddress String Not NULL,
-    Phonenumber INT NOT NULL,
-    Name VARCHAR(100) NOT NULL,
-    Password VARCHAR(100) NOT NULL,
-    CompanyName VARCHAR(100) NOT NULL
+    Username VARCHAR(100) NOT NULL,
+    UserPassword VARCHAR(100) NOT NULL,
+    CompanyName VARCHAR(100) NOT NULL,
+    FOREIGN KEY (CompanyName) REFERENCES Company(CompanyName)
 );
 
 CREATE TABLE User_Phonenumber (
-    Phonenumber INT,
+    Phonenumber VARCHAR(15),
     UserID INT,
     PRIMARY KEY (Phonenumber, UserID),
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
@@ -24,15 +27,15 @@ CREATE TABLE User_Mailaddress (
 CREATE TABLE User_Schedule (
     UserID INT,
     EventDate DATE,
-    Time INT,
+    ScheduleTime TIME,
     Comment VARCHAR(255),
-    PRIMARY KEY (UserID, EventDate, Time),
+    PRIMARY KEY (UserID, EventDate, ScheduleTime),
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
 CREATE TABLE User_Plan (
     UserID INT PRIMARY KEY,
-    PlanType VARCHAR(255) NOT NULL,
+    PlanType VARCHAR(50) NOT NULL,
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
@@ -46,22 +49,18 @@ CREATE TABLE Employee (
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
-CREATE TABLE Company (
-    CompanyName VARCHAR(100) PRIMARY KEY
-);
-
 CREATE TABLE Project (
     ProjectID SERIAL PRIMARY KEY,
     ProjectName VARCHAR(50) NOT NULL,
     CompanyName VARCHAR(100) NOT NULL,
-    FOREIGN KEY (CompanyID) REFERENCES Company(CompanyID)
+    FOREIGN KEY (CompanyName) REFERENCES Company(CompanyName) 
 );
 
 CREATE TABLE ProjectTeam (
     ProjectID INT,
     UserID INT,
-    PRIMARY KEY (UserID, ProjectID)
-    FOREIGN KEY (ProjectID) REFERENCES Project(ProjectID)
+    PRIMARY KEY (UserID, ProjectID),
+    FOREIGN KEY (ProjectID) REFERENCES Project(ProjectID),
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
@@ -104,7 +103,7 @@ CREATE TABLE ProjectPlanTools (
     ProjectPlanID INT,
     ToolID INT,
     ArrayIndex INT,
-    Completed BOOL,
+    Completed BOOLEAN, 
     PRIMARY KEY (ProjectPlanID, ToolID, ArrayIndex),
     FOREIGN KEY (ProjectPlanID) REFERENCES ProjectPlan(ProjectPlanID),
     FOREIGN KEY (ToolID) REFERENCES Tools(ToolID)
@@ -119,7 +118,7 @@ CREATE TABLE Worksheet (
 
 CREATE TABLE WorksheetNode (
     NodeID SERIAL PRIMARY KEY,
-    NodeName VARCHAR(100) 
+    NodeName VARCHAR(100)
 );
 
 CREATE TABLE WorksheetNodeAssignment (
@@ -131,21 +130,19 @@ CREATE TABLE WorksheetNodeAssignment (
 );
 
 CREATE TABLE WorksheetNodeCoords (
-    NodeID INT,
+    NodeID INT PRIMARY KEY,
     x_coord INT NOT NULL,
     y_coord INT NOT NULL,
-    PRIMARY KEY (NodeID),
     FOREIGN KEY (NodeID) REFERENCES WorksheetNode(NodeID)
 );
 
 CREATE TABLE ProductJourneyMapping (
-    ProjectID INT,
+    ProjectID INT PRIMARY KEY,
     InitialCycleTime VARCHAR(100),
-    1stUse VARCHAR(255),
-    2ndUse VARCHAR(255),
-    3rdUse VARCHAR(255),
+    firstUse VARCHAR(255),
+    secondUse VARCHAR(255),
+    thirdUse VARCHAR(255),
     xthUse VARCHAR(255),
-    PRIMARY KEY (ProjectID),
     FOREIGN KEY (ProjectID) REFERENCES Project(ProjectID)
 );
 
@@ -158,7 +155,7 @@ CREATE TABLE InterestInfluence (
 
 CREATE TABLE StakeholderNote (
     StakeID SERIAL PRIMARY KEY,
-    Comment VARCHAR(255),
+    Comment VARCHAR(255) 
 );
 
 CREATE TABLE StakeholderNoteAssignment (
