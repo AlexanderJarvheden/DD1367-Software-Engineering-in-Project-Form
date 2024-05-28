@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import '../Assets/Styles/SignupPage.css';
 
 function SignupPage() {
@@ -10,19 +9,37 @@ function SignupPage() {
 		phonenumber: '',
 		company: ''
 	});
+	const [termsAccepted, setTermsAccepted] = useState(false);
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-		setInputs(values => ({ ...values, [name]: value }))
+		setInputs(values => ({ ...values, [name]: value }));
 	}
+
+	const handleCheckboxChange = (e) => {
+		setTermsAccepted(e.target.checked);
+	}
+
+	const validatePassword = (password) => {
+		const hasUpperCase = /[A-Z]/.test(password);
+		const hasLowerCase = /[a-z]/.test(password);
+		const hasNumber = /\d/.test(password);
+		const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+		return password.length >= 8 && hasUpperCase && hasLowerCase && hasNumber && hasSpecialChar;
+	}
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (!inputs.email.includes('@')) {
 			alert('Please enter a valid email address.');
 			return;
 		}
-		if (inputs.password.length < 5) {
-			alert('Your password must be at least 8 characters long.');
+		if (!validatePassword(inputs.password)) {
+			alert('Your password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.');
+			return;
+		}
+		if (!termsAccepted) {
+			alert('You must accept the terms and conditions.');
 			return;
 		}
 		console.log(inputs.name);
@@ -56,7 +73,7 @@ function SignupPage() {
 	}
 
 	return (
-		<div className="signup-container" >
+		<div className="signup-container">
 			<h2 className="signup-title">Sign up to try our tools!</h2>
 			<form className="signup-form" onSubmit={handleSubmit}>
 				<input type="text" name="name" placeholder="Name" value={inputs.name} onChange={handleChange} />
@@ -65,7 +82,7 @@ function SignupPage() {
 				<input type="tel" name="phonenumber" placeholder="Phone number" value={inputs.phonenumber} onChange={handleChange} />
 				<input type="text" name="company" placeholder="Company" value={inputs.company} onChange={handleChange} />
 				<div className="signup-terms">
-					<input type="checkbox" id="terms" />
+					<input type="checkbox" id="terms" checked={termsAccepted} onChange={handleCheckboxChange} />
 					<label htmlFor="terms">I agree with the terms and conditions and GDPR</label>
 				</div>
 				<button type="submit" className="signup-button">Sign up</button>
@@ -73,4 +90,5 @@ function SignupPage() {
 		</div>
 	);
 }
+
 export default SignupPage;

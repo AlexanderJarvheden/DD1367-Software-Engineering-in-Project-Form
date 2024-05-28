@@ -1,49 +1,48 @@
-import React from 'react'
-import '../Assets/Styles/PinLibrary.css'
-import close from '../Assets/Icons/close.svg'
-import redcircle from '../Assets/Icons/redcircle.svg'
-import yellowcircle from '../Assets/Icons/yellowcircle.svg'
-import box from '../Assets/Icons/box.svg'
-import book from '../Assets/Icons/book.svg'
-import cbm from '../Assets/Icons/cbm.svg'
-import joystick from '../Assets/Icons/joystick.svg'
-import dart from '../Assets/Icons/dart.svg'
-import chat from '../Assets/Icons/chat.svg'
-import experiment from '../Assets/Icons/experiment.svg'
-import ghost from '../Assets/Icons/ghost.png'
-import questionmark from '../Assets/Icons/questionmark.svg'
-import lamp from '../Assets/Icons/lamp.svg'
-import infinity from '../Assets/Icons/infinity.svg'
-import checkbox from '../Assets/Icons/checkbox.svg'
-import brain from '../Assets/Icons/brain.png'
-import wisdom from '../Assets/Icons/wisdom.png'
-import fire from '../Assets/Icons/fire.svg'
-import doublethinkers from '../Assets/Icons/doublethinkers.png'
-import trend from '../Assets/Icons/trend.png'
-import detective from '../Assets/Icons/detective.png'
-import brainwaves from '../Assets/Icons/brainwaves.png'
-import molecule from '../Assets/Icons/molecule.png'
-import hat from '../Assets/Icons/hat.png'
-import biobrain from '../Assets/Icons/biobrain.png'
-import eight from '../Assets/Icons/8.png'
-import path from '../Assets/Icons/path.png'
-import board from '../Assets/Icons/board.png'
-import combo from '../Assets/Icons/combo.png'
-import thumbdown from '../Assets/Icons/thumbdown.png'
-import turquoisecircle from '../Assets/Icons/turquoisecircle.svg'
-import DrawingMap from '../Assets/Icons/DrawingMap.png'
-import measure from '../Assets/Icons/measurement.png'
-import darts from '../Assets/Icons/darts.png'
+import React from 'react';
+import '../Assets/Styles/PinLibrary.css';
+import close from '../Assets/Icons/close.svg';
+import redcircle from '../Assets/Icons/redcircle.svg';
+import yellowcircle from '../Assets/Icons/yellowcircle.svg';
+import box from '../Assets/Icons/box.svg';
+import book from '../Assets/Icons/book.svg';
+import cbm from '../Assets/Icons/cbm.svg';
+import joystick from '../Assets/Icons/joystick.svg';
+import dart from '../Assets/Icons/dart.svg';
+import chat from '../Assets/Icons/chat.svg';
+import experiment from '../Assets/Icons/experiment.svg';
+import ghost from '../Assets/Icons/ghost.png';
+import questionmark from '../Assets/Icons/questionmark.svg';
+import lamp from '../Assets/Icons/lamp.svg';
+import infinity from '../Assets/Icons/infinity.svg';
+import checkbox from '../Assets/Icons/checkbox.svg';
+import brain from '../Assets/Icons/brain.png';
+import wisdom from '../Assets/Icons/wisdom.png';
+import fire from '../Assets/Icons/fire.svg';
+import doublethinkers from '../Assets/Icons/doublethinkers.png';
+import trend from '../Assets/Icons/trend.png';
+import detective from '../Assets/Icons/detective.png';
+import brainwaves from '../Assets/Icons/brainwaves.png';
+import molecule from '../Assets/Icons/molecule.png';
+import hat from '../Assets/Icons/hat.png';
+import biobrain from '../Assets/Icons/biobrain.png';
+import eight from '../Assets/Icons/8.png';
+import path from '../Assets/Icons/path.png';
+import board from '../Assets/Icons/board.png';
+import combo from '../Assets/Icons/combo.png';
+import thumbdown from '../Assets/Icons/thumbdown.png';
+import turquoisecircle from '../Assets/Icons/turquoisecircle.svg';
+import DrawingMap from '../Assets/Icons/DrawingMap.png';
+import measure from '../Assets/Icons/measurement.png';
+import darts from '../Assets/Icons/darts.png';
 
-import PJMButton from '../Tools/ToolButtons/PJMButton.js'
-import FutureScenariosButton from '../Tools/ToolButtons/FutureScenariosButton.js'
+import PJMButton from '../Tools/ToolButtons/PJMButton.js';
+import FutureScenariosButton from '../Tools/ToolButtons/FutureScenariosButton.js';
 
-
-const PinLibraryOfTools = () => {
+const PinLibraryOfTools = ({ onClose }) => {
   return (
     <div className='libraryContainer'>
-      <button className='closeButton'>
-        <img src={close} alt="" />
+      <button className='closeButton' onClick={onClose}>
+        <img src={close} alt="Close" />
         <span className='closeText'>Close</span>
       </button>
       <div className='pinLibraryText'>Pin library</div>
@@ -126,12 +125,6 @@ const PinLibraryOfTools = () => {
                 </button>
                 <span className='researchText'>Interviews</span>
               </div>
-              {/* <div className='toolBox'>
-                <span className='researchText'>Future</span>
-                <img src={redcircle} alt="" className='circle' />
-                <img src={wisdom} alt="" className='icon' />
-                <span className='researchText'>Scenarios</span>
-              </div> */}
               <FutureScenariosButton />
               <div className='toolBox'>
                 <span className='researchText'>Competitor</span>
@@ -302,8 +295,7 @@ const PinLibraryOfTools = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-
-export default PinLibraryOfTools
+export default PinLibraryOfTools;

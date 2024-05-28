@@ -1,53 +1,254 @@
-.process-container {
+.process-line-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15vh; /* Use viewport height for top margin */
+  padding: 0 15%; /* Add padding to prevent overlap with the menu */
+  box-sizing: border-box;
+}
+
+.process-line-header {
+  display: flex;
+  justify-content: space-between;
+  width: 90%; /* Use percentage for width */
+  align-items: flex-start;
   position: relative;
-  width: 100%; /* Full width to accommodate dynamic addition of steps */
-  min-height: 100px; /* Set based on your design needs */
+}
+
+.process-line-text-wrapper {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding-left: 20px; /* Padding for START label */
 }
 
-.process-start-label {
-  font-size: 16px;
-  color: #333;
-  margin-right: 10px;
+.process-line-text {
+  color: var(--Dark-Deep-purple, #1E154C);
+  text-align: center;
+  font-family: Futura;
+  font-size: 1rem; /* Use relative units for font size */
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2em; /* Use relative units for line height */
+  letter-spacing: -0.05em; /* Adjusted letter spacing */
 }
 
-.process-initial-line {
-  width: 50px; /* Adjust this width based on your design */
-  height: 3px;
-  background-color: black;
-  position: absolute;
-  left: 10px; /* Aligns with the 'START' text */
-}
-
-.process-step {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #ddd;
+.process-line-add-wrapper {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: -1.0em; /* Use relative units for margin */
+  cursor: pointer; /* Indicate that it's clickable */
+  margin-left: 2.7em;
+}
+
+.process-line-add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: center;
+  width: 3em; /* Use relative units for width */
+  height: 3em; /* Use relative units for height */
+  background-color: #D6D3E3; /* Circle background color */
+  border-radius: 50%;
+  border: 0.15em solid #9B95B5; /* Use relative units for border */
+  position: relative;
+}
+
+.add-icon {
+  color: #908DA0;
+  font-family: Inter;
+  font-size: 1.5em; /* Use relative units for font size */
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.add-text {
+  color: #908DA0;
+  font-family: Inter;
+  font-size: 0.75em; /* Use relative units for font size */
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  margin-top: 0.4em; /* Use relative units for margin */
 }
 
 .process-line {
-  height: 1px;
-  background-color: black;
-  position: absolute;
-  top: 40px; /* Adjust to vertically center with the steps */
+  width: 90%; /* Adjust to match the header width */
+  height: 0.05em; /* Use relative units for height */
+  background-color: #9E9E9E;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25); /* Mimic drop shadow effect */
+  margin-top: 0.4em; /* Use relative units for margin */
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.process-add-btn {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #4CAF50;
-  color: white;
-  font-size: 24px;
-  border: none;
-  cursor: pointer;
-  outline: none;
+.curved-section {
   position: absolute;
+  width: 2em;
+  height: 4.0em;
+  border-right: 0.05em solid #9E9E9E;
+  border-bottom: 0.05em solid #9E9E9E;
+  border-top: 0.05em solid #9E9E9E;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  top: 0em; /* Adjust based on the position of the circles */
+  left: calc(97.3% + 1.57em); /* Adjust based on the position of the last circle */
+  animation: curvedSectionAnimation 5s forwards; /* Add animation */
+}
+
+.straight-section {
+  position: absolute;
+  width: calc(100% - 2em); /* Adjust based on the width of the container */
+  height: 0.03em;
+  background-color: #9E9E9E;
+  top: 3.98em; /* Adjust based on the position of the curved section */
+  left: calc(5%); /* Adjust based on the position of the curved section */
+  animation: straightSectionAnimation 5s 5s forwards; /* Add animation with delay */
+}
+
+.circle-container {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  position: absolute;
+  top: 600px; /* Adjust the top position */
+  left: 300px; /* Adjust the left position */
+}
+
+.circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 2.7em; /* Space between circles */
+}
+
+.circle svg {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+}
+
+.circle-text {
+  color: var(--Primary-Brand, #483D8B);
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 12px */
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-top: 0.5em; /* Add spacing between circle and text */
+}
+
+.red-circle svg {
+  fill: #FAE2E2; /* Adjust the fill color with transparency */
+  stroke-width: 2px;
+  stroke: #CD2626;
+}
+
+.yellow-circle svg {
+  fill: #FDEDBF; /* Adjust the fill color with transparency */
+  stroke-width: 2px;
+  stroke: #F9BB00;
+}
+
+.blue-circle svg {
+  fill: #D4EDED; /* Adjust the fill color with transparency */
+  stroke-width: 2px;
+  stroke: #049F9F; 
+}
+
+.purple-circle svg {
+  fill: #8882A5;
+  stroke-width: 2px;
+  stroke: #5A4F91;
+}
+
+.bottom-bar {
+  width: 70%;
+  height: 20px;
+  border-radius: 10px;
+  background: #D9D9D9;
+  position: absolute;
+  top: 700px; /* Adjust based on the position of the circles */
+  left: 50px;
+  right: 0;
+  margin: 0 auto;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top */
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 1200px) {
+  .process-line-header {
+    width: 60%;
+  }
+  .circle-container {
+    width: 70%;
+    top: 600px; /* Adjust for smaller screens */
+    left: 200px;
+  }
+  .bottom-bar {
+    width: 80%;
+  }
+}
+
+@media (max-width: 992px) {
+  .process-line-header {
+    width: 50%;
+  }
+  .circle-container {
+    width: 60%;
+    top: 550px; /* Adjust for smaller screens */
+    left: 150px;
+  }
+  .bottom-bar {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-line-header {
+    width: 40%;
+  }
+  .circle-container {
+    width: 50%;
+    top: 500px; /* Adjust for smaller screens */
+    left: 100px;
+  }
+  .bottom-bar {
+    width: 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  .process-line-header {
+    width: 80%;
+  }
+  .circle-container {
+    width: 80%;
+    top: 450px; /* Adjust for smaller screens */
+    left: 50px;
+  }
+  .bottom-bar {
+    width: 80%;
+  }
 }
