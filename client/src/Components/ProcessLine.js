@@ -29,7 +29,7 @@ const ProcessLine = () => {
       </div>
       <div className="process-line">
         {circles.map((circle, index) => (
-          <div key={index} className="circle purple-circle">
+          <div key={index} className="addCircle purple-circle">
             <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
               <circle cx="22.5" cy="22.5" r="21.5" />
             </svg>
@@ -52,25 +52,25 @@ const ProcessLine = () => {
       </div>
 
       <div className="circle-container">
-        <div className="circle purple-circle">
+        <div className="addCircle purple-circle">
           <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
             <circle cx="22.5" cy="22.5" r="21.5" />
           </svg>
           <span className="circle-text">ACTIVITY DONE</span>
         </div>
-        <div className="circle red-circle">
+        <div className="addCircle red-circle">
           <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
             <circle cx="22.5" cy="22.5" r="21.5" />
           </svg>
           <span className="circle-text">RESEARCH</span>
         </div>
-        <div className="circle yellow-circle">
+        <div className="addCircle yellow-circle">
           <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
             <circle cx="22.5" cy="22.5" r="21.5" />
           </svg>
           <span className="circle-text">IDEATION</span>
         </div>
-        <div className="circle blue-circle">
+        <div className="addCircle blue-circle">
           <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
             <circle cx="22.5" cy="22.5" r="21.5" />
           </svg>
