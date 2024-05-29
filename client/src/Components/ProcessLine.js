@@ -8,12 +8,16 @@ const ProcessLine = () => {
 
   const handleAddCircle = () => {
     if (circles.length < 10) {
-      setCircles([...circles, { id: circles.length + 1 }]);
       setShowPinLibrary(true);
     }
   };
 
   const closePinLibrary = () => {
+    setShowPinLibrary(false);
+  };
+
+  const handleSelectTool = (ToolComponent) => {
+    setCircles([...circles, { id: circles.length + 1, tool: ToolComponent }]);
     setShowPinLibrary(false);
   };
 
@@ -29,10 +33,16 @@ const ProcessLine = () => {
       </div>
       <div className="process-line">
         {circles.map((circle, index) => (
-          <div key={index} className="addCircle purple-circle">
-            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
-              <circle cx="22.5" cy="22.5" r="21.5" />
-            </svg>
+          <div key={index} className="addCircle">
+            {circle.tool ? (
+              circle.tool
+            ) : (
+              <div className="purple-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
+                  <circle cx="22.5" cy="22.5" r="21.5" />
+                </svg>
+              </div>
+            )}
           </div>
         ))}
         {circles.length < 10 && (
@@ -44,10 +54,10 @@ const ProcessLine = () => {
           </div>
         )}
         {circles.length === 10 && (
-        <>
-          <div className="curved-section"></div>
-          <div className="straight-section"></div>
-        </>
+          <>
+            <div className="curved-section"></div>
+            <div className="straight-section"></div>
+          </>
         )}
       </div>
 
@@ -81,7 +91,7 @@ const ProcessLine = () => {
       
       {showPinLibrary && (
         <div className="overlay">
-          <PinLibraryOfTools onClose={closePinLibrary} />
+          <PinLibraryOfTools onClose={closePinLibrary} onSelectTool={handleSelectTool} />
         </div>
       )}
     </div>
