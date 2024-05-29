@@ -26,7 +26,7 @@
 .menu-item {
     display: flex;
     height: 48px;
-    padding: 12px 12px 12px 12px;
+    padding: 12px 90px 12px 12px;
     align-items: center;
     gap: 12px;
     align-self: stretch;
@@ -82,26 +82,17 @@
 
 /* Add the new open and closed class styles */
 .sidebar.open {
+    /* Styles for when the sidebar is open */
     width: 212px;
     /* other styles */
 }
 
 .sidebar.closed {
+    /* Styles for when the sidebar is closed */
     width: 0;
     padding: 0;
+    /* Hide the content */
     overflow: hidden;
+    /* Transition for the closing effect */
     transition: width 0.3s ease;
-}
-
-.toggle-button {
-    position: fixed;
-    top: 10px;
-    /* Adjust based on your layout */
-    left: 10px;
-    /* Adjust based on your layout */
-    z-index: 1001;
-    /* Ensure it's above other content */
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
 }
