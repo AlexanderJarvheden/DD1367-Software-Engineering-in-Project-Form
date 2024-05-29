@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../Assets/Styles/cardslibrary.css';
 import prestudies_icon from '../../Assets/Icons/prestudies_icon.svg';
+import Modal from './Modal'; // Import the Modal component
 
 const Cards = ({ title, description, onUse }) => {
+    const [showModal, setShowModal] = useState(false);
+
     const handleUseClick = () => {
         onUse({ title, description });
     };
 
+    const handlePreviewClick = () => {
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
+
     return (
-        <div className="containerCards">
+        <div className="container">
             <div className="card">
                 <div className="card-header">
                     <div className="header-holder">
@@ -31,10 +42,12 @@ const Cards = ({ title, description, onUse }) => {
                     <div className="card-footer">{description}</div>
                     <div className="btn-container">
                         <button className="btn-use" onClick={handleUseClick}>USE</button>
-                        <button className="btn-preview">PREVIEW</button>
+                        <button className="btn-preview" onClick={handlePreviewClick}>PREVIEW</button>
                     </div>
                 </div>
             </div>
+            <Modal show={showModal} onClose={handleCloseModal} title={title} description={description}>
+            </Modal>
         </div>
     );
 };
