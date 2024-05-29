@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import FilterButtons from '../Components/LibraryComponents/FilterButtons';
 import Cards from '../Components/LibraryComponents/CardsLibrary';
 import Snaker from '../Components/LibraryComponents/SnakeLibrary';
@@ -7,15 +8,20 @@ import '../Assets/Styles/librarypage.css';
 const ToolLibraryPage = () => {
     const [nodes, setNodes] = useState([]); // Store node data as an array of objects
     const [activeFilter, setActiveFilter] = useState('All'); // Added a state for filtering
+    const navigate = useNavigate(); // Hook for navigation
 
     const handleUse = (node) => {
         setNodes([...nodes, node]);
     };
 
+    const handlePreview = (path) => {
+        navigate(path); // Navigate to the specified preview page
+    };
+
     // Example card data with categories for filtering
     const cardData = [
-        { title: "Prestudies", description: "Basics", category: "RESEARCH", onUse: handleUse },
-        { title: "Aftermath", description: "Advanced", category: "IDEATION", onUse: handleUse },
+        { title: "Prestudies", description: "Basics", category: "RESEARCH", onUse: handleUse, onPreview: () => handlePreview('/fsw') },
+        { title: "Aftermath", description: "Advanced", category: "IDEATION", onUse: handleUse, onPreview: () => handlePreview('/pjmworksheet') },
         { title: "Invention", description: "Sparking", category: "IDEATION", onUse: handleUse },
         { title: "Inspiration", description: "Ignite", category: "IDEATION", onUse: handleUse },
         { title: "Ideas", description: "Unleash", category: "IDEATION", onUse: handleUse },
@@ -37,7 +43,7 @@ const ToolLibraryPage = () => {
             <div className="tool-library-page" >
                 <FilterButtons setActiveFilter={setActiveFilter} />
                 {filteredCards.map((card, index) => (
-                    <Cards key={index} title={card.title} description={card.description} onUse={card.onUse} />
+                    <Cards key={index} title={card.title} description={card.description} onUse={card.onUse} onPreview={card.onPreview} />
                 ))}
             </div>
             <div className='snakeBackground'><Snaker nodes={nodes} /></div>
