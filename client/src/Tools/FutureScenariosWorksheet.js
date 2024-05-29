@@ -6,75 +6,78 @@ import Arrow from '../Assets/Images/downArrow.svg';
 import colors from '../Assets/Images/PJMcolors.svg';
 import graph from '../Assets/Images/graphFUWS.svg';
 
+import Sidemenu from '../Components/PlannerSidemenu.js'
+
 const FutureScenariosWorksheet = () => {
     const navBarStyle = { position: 'fixed', top: '27px', left: '145px', width: '100%' };
-    const [texts, setTexts] = useState([]);
-    const [selectedTextId, setSelectedTextId] = useState(null);
-    const [newTextValue, setNewTextValue] = useState("");
+    // const [texts, setTexts] = useState([]);
+    // const [selectedTextId, setSelectedTextId] = useState(null);
+    // const [newTextValue, setNewTextValue] = useState("");
 
-    const handleTextDblClick = (text) => {
-        setSelectedTextId(text.id);
-        setNewTextValue(text.text);
-    };
+    // const handleTextDblClick = (text) => {
+    //     setSelectedTextId(text.id);
+    //     setNewTextValue(text.text);
+    // };
 
-    const handleInputChange = (e) => {
-        setNewTextValue(e.target.value);
-    };
+    // const handleInputChange = (e) => {
+    //     setNewTextValue(e.target.value);
+    // };
 
-    const handleInputBlur = () => {
-        const updatedTexts = texts.map(t => {
-            if (t.id === selectedTextId) {
-                return {
-                    ...t,
-                    text: newTextValue,
-                };
-            }
-            return t;
-        });
-        setTexts(updatedTexts);
-        setSelectedTextId(null);
-    };
+    // const handleInputBlur = () => {
+    //     const updatedTexts = texts.map(t => {
+    //         if (t.id === selectedTextId) {
+    //             return {
+    //                 ...t,
+    //                 text: newTextValue,
+    //             };
+    //         }
+    //         return t;
+    //     });
+    //     setTexts(updatedTexts);
+    //     setSelectedTextId(null);
+    // };
 
-    const renderInputField = () => {
-        if (selectedTextId) {
-            const textObj = texts.find(t => t.id === selectedTextId);
-            if (textObj) {
-                return (
-                    <input
-                        type="text"
-                        value={newTextValue}
-                        onChange={handleInputChange}
-                        onBlur={handleInputBlur}
-                        style={{
-                            position: 'absolute',
-                            top: textObj.y,
-                            left: textObj.x,
-                            fontSize: '18px',
-                            border: '1px solid black',
-                        }}
-                        autoFocus
-                    />
-                );
-            }
-        }
-        return null;
-    };
+    // const renderInputField = () => {
+    //     if (selectedTextId) {
+    //         const textObj = texts.find(t => t.id === selectedTextId);
+    //         if (textObj) {
+    //             return (
+    //                 <input
+    //                     type="text"
+    //                     value={newTextValue}
+    //                     onChange={handleInputChange}
+    //                     onBlur={handleInputBlur}
+    //                     style={{
+    //                         position: 'absolute',
+    //                         top: textObj.y,
+    //                         left: textObj.x,
+    //                         fontSize: '18px',
+    //                         border: '1px solid black',
+    //                     }}
+    //                     autoFocus
+    //                 />
+    //             );
+    //         }
+    //     }
+    //     return null;
+    // };
     
     
     
     
-    const handleAddTextClick = () => {
-        const newText = {
-            x: 100,  // Starting x position in the canvas
-            y: 100,  // Starting y position in the canvas
-            text: "New Text",  // Default text content
-            id: `text_${texts.length}`,  // Unique ID for each text
-        };
-        setTexts([...texts, newText]);
-    };
+    // const handleAddTextClick = () => {
+    //     const newText = {
+    //         x: 100,  // Starting x position in the canvas
+    //         y: 100,  // Starting y position in the canvas
+    //         text: "New Text",  // Default text content
+    //         id: `text_${texts.length}`,  // Unique ID for each text
+    //     };
+    //     setTexts([...texts, newText]);
+    // };
 
     return (
         <div>
+            <Sidemenu/>
             <ToolNavBar style={navBarStyle} />
             <div className='introWorksheet' style={{ position: 'fixed', top: '27px', right: '30px' }}>
                 <button className='intro'>
@@ -107,7 +110,7 @@ const FutureScenariosWorksheet = () => {
             </div>
 
             {/* Konva Canvas */}
-            <div style={{ 
+            {/* <div style={{ 
                 position: 'absolute', 
                 top: '25%', 
                 left: '10%', 
@@ -116,7 +119,8 @@ const FutureScenariosWorksheet = () => {
                 border: '1px solid black' 
             }}>             
                 
-                <Stage width={1200} height={560}>
+                {/* <Stage width={1200} height={560}> 
+                <Stage >
                     <Layer>
                         {texts.map((text) => (
                             <Text
@@ -145,10 +149,9 @@ const FutureScenariosWorksheet = () => {
                     </Layer>
                 </Stage>
                 {renderInputField()}
-            </div>
             <button onClick={handleAddTextClick} style={{ position: 'fixed', bottom: '20px', right: '20px' }}>
                 Add Text
-            </button>
+            </button> */}
         </div>
     );
 }

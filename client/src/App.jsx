@@ -2,6 +2,7 @@ import React from 'react'
 import {  useState } from "react";
 import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import PJMWorksheet from './Tools/PJMWorksheet.js'
+import FutureScenariosWorksheet from './Tools/FutureScenariosWorksheet.js'
 import Landingpage from './Components/Landingpage.js';
 import SignupPage from './Components/SignupPage';
 import LoginPage from './Components/LoginPage.js';
@@ -40,7 +41,7 @@ function App() {
 
     return (
         <>
-            {loggedIn ? <DashboardPage /> : <Navigationbar />}
+            {/* {loggedIn ? <DashboardPage /> : <Navigationbar />} */}
             <Routes>
               <Route exact path="/" element={ loggedIn ? <DashboardPage /> : <Landingpage />} />
               <Route path="/planner" element={<ProcessLine />} />
@@ -51,6 +52,7 @@ function App() {
               <Route path="/pinlibraryoftools" element={<PinLibraryOfTools />} />
               <Route path="/postsignuppage" element={<PostSignUpPage />} />
               <Route path="/pjmworksheet" element={<PJMWorksheet />} />
+              <Route path="/futurescenarios" element={<FutureScenariosWorksheet />} />
               <Route path="/toolnavbar" element={<ToolNavBar />} />
               <Route path="/teams" element={<ChooseTeam />} />
               <Route path="/library" element={<Library />} />
