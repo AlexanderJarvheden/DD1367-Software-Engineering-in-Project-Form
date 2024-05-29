@@ -42,7 +42,7 @@
     margin-top: 20px;
 }
 
-.container {
+.containerCards {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -52,7 +52,7 @@
     padding-top: 210px;
 }
 
-.container+.container {
+.containerCards+.containerCards {
     padding-top: 10px;
 }
 

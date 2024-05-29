@@ -19,7 +19,7 @@ const Cards = ({ title, description, onUse }) => {
     };
 
     return (
-        <div className="container">
+        <div className="containerCards">
             <div className="card">
                 <div className="card-header">
                     <div className="header-holder">
