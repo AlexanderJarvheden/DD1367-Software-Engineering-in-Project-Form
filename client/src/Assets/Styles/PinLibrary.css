@@ -17,7 +17,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 32px;
-  height: 600px;
+  height: 550px;
   /* Set the height of the container */
   overflow-y: auto;
   /* Add a vertical scrollbar */
@@ -34,6 +34,7 @@
   padding: 4px 12px 4px 8px;
   border-radius: 8px;
   background: var(--Neutrals-Gray-200, #F1F0F7);
+  z-index: 1000; /* Added z-index to bring the button in front */
 }
 
 .closeText {
@@ -58,12 +59,14 @@
   line-height: 50.4px;
   /* 157.5% */
   letter-spacing: -0.64px;
-  top: 66px;
+  top: -20px;
+  width: 80%; /* Adjusted width to prevent overlap */
+  margin: 0 auto; /* Centering the text */
 }
 
 .breadText {
   position: relative;
-  top: 70px;
+  top: -25px;
   color: #000;
   text-align: center;
   font-family: Roboto, Arial, sans-serif;
@@ -71,6 +74,8 @@
   font-style: normal;
   font-weight: 300;
   line-height: 32.4px;
+  width: 80%; /* Adjusted width to prevent overlap */
+  margin: 0 auto; /* Centering the text */
   /* 202.5% */
 }
 
