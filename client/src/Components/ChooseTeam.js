@@ -5,16 +5,16 @@ import newTeam from '../Assets/Icons/newTeam.svg'
 const ChooseTeam = () => {
   return (
     <div>
-        <div className='mainContainer'>
-            <div className='teamWithName'>
-                <img src={newTeam} alt=""/>
-                <span className='addNewTeamText'>Add new</span>
-            </div>
+      <div className='mainContainer'>
+        <div className='teamWithName'>
+          <img src={newTeam} alt="" />
+          <span className='addNewTeamText'>Add new</span>
         </div>
-        <div className='textContainer'>
-            <span className='chooseTeamText'>Choose Team</span>
-            <span className='questionText'>Which team do you want to work with today</span>
-        </div>
+      </div>
+      <div className='textContainer'>
+        <span className='chooseTeamText'>Choose Team</span>
+        <span className='questionText'>Which team do you want to work with today</span>
+      </div>
     </div>
   )
 }

@@ -1,0 +1,116 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 600px;
+    width: 1071px;
+    margin-left: 160px;
+
+}
+
+.modal-header,
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title {
+    margin: 0;
+}
+
+.modal-body {
+    flex: 1;
+    /* Take up the remaining space */
+    overflow-y: auto;
+    /* Allow scrolling if content is too long */
+    margin: 20px 0;
+    border-radius: 4px;
+    background: var(--Accent, #DEDDE4);
+}
+
+.button-close {
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    background: var(--Secondary-Brand-purple, #574ED5);
+    font-family: Futura;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.buttonlower {
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    background: var(--Secondary-Brand-purple, #574ED5);
+    gap: 20px;
+    font-family: Futura;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.modal-description {
+    height: 93px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    color: var(--Text, #5B586F);
+    text-align: center;
+    font-family: Futura;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.modal-title {
+    color: var(--Darks, #1C1735);
+    font-family: 'Futura', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin: 0;
+    /* Ensure no extra margin is added */
+}
+
+.modal-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--Darks, #343436);
+    font-family: 'Futura', sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    height: 100%;
+    /* Adjust the height as needed */
+    /* Add some spacing below the box if needed */
+}

@@ -55,11 +55,12 @@
 
 .search-btn {
     display: flex;
-    width: 133px;
+    width: 113px;
     height: 32px;
     padding: 0 0 0 200px;
     justify-content: flex-end;
     align-items: center;
+    margin-left: -50px;
 }
 
 .search-btn2 {
@@ -71,6 +72,7 @@
     align-items: center;
     flex-shrink: 0;
     cursor: pointer;
-    background: var(--Success-light, #FFF);
+    background: var(--Light, #F1F1F4);
     border: none;
+    margin-right: 10000;
 }
