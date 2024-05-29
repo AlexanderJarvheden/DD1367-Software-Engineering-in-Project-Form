@@ -2,9 +2,14 @@ import React from 'react';
 import '../../Assets/Styles/cardslibrary.css';
 import prestudies_icon from '../../Assets/Icons/prestudies_icon.svg';
 
-const Cards = ({ title, description, onUse }) => {
+const Cards = ({ title, description, onUse, onPreview }) => {
+
     const handleUseClick = () => {
         onUse({ title, description });
+    };
+
+    const handlePreviewClick = () => {
+        onPreview();
     };
 
     return (
@@ -31,7 +36,8 @@ const Cards = ({ title, description, onUse }) => {
                     <div className="card-footer">{description}</div>
                     <div className="btn-container">
                         <button className="btn-use" onClick={handleUseClick}>USE</button>
-                        <button className="btn-preview">PREVIEW</button>
+                        <button className="btn-preview" onClick={handlePreviewClick}>PREVIEW</button>
+                        
                     </div>
                 </div>
             </div>
