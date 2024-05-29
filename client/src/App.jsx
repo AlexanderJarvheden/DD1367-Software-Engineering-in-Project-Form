@@ -14,7 +14,11 @@ import ToolNavBar from './Components/ToolNavBar.js';
 import ChooseTeam from './Components/ChooseTeam.js';
 import DashboardPage from './Components/DashboardPage.js';
 import ProcessLine from './Components/ProcessLine.js';
-import Library from './Pages/ToolLibraryPage.js'
+import Library from './Pages/ToolLibraryPage.js';
+import FutureScenariosWorksheet from './Tools/FutureScenariosWorksheet.js';
+
+import FutureScenariosButton from './Tools/ToolButtons/FutureScenariosButton.js';
+import PJMButton from './Tools/ToolButtons/PJMButton.js';
 
 import './App.css';
 // import './Assets/Styles/landingpage.css'
@@ -51,6 +55,9 @@ function App() {
               <Route path="/pinlibraryoftools" element={<PinLibraryOfTools />} />
               <Route path="/postsignuppage" element={<PostSignUpPage />} />
               <Route path="/pjmworksheet" element={<PJMWorksheet />} />
+              <Route path="/fsw" element={<FutureScenariosWorksheet />} />
+              <Route path="/pjmbutton" element={<PJMButton />} />
+              <Route path="/fsb" element={<FutureScenariosButton />} />
               <Route path="/toolnavbar" element={<ToolNavBar />} />
               <Route path="/teams" element={<ChooseTeam />} />
               <Route path="/library" element={<Library />} />
