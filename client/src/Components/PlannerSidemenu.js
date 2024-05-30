@@ -149,9 +149,6 @@ function Sidebar2() {
             </Stage>
             {renderInputField()}
             {/* </div> */}
-            <button onClick={handleAddTextClick} style={{ position: 'fixed', bottom: '20px', right: '20px' }}>
-                Add Text
-            </button>
         </div>
     );
 }
