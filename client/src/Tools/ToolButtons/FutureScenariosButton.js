@@ -1,16 +1,23 @@
-import React from 'react'
-import '../../Assets/Styles/PinLibrary.css'
-import redcircle from '../../Assets/Icons/redcircle.svg'
-import wisdom from '../../Assets/Icons/wisdom.png'
-import {useNavigate} from 'react-router-dom';
+import React, { useState } from 'react';
+import '../../Assets/Styles/PinLibrary.css';
+import redcircle from '../../Assets/Icons/redcircle.svg';
+import wisdom from '../../Assets/Icons/wisdom.png';
+import { useNavigate } from 'react-router-dom';
 
-
-
-
-const PJMButton = () => {
+const FutureScenariosButton = () => {
     const navigate = useNavigate();
+    const [clickCount, setClickCount] = useState(0);
+
+    const handleClick = () => {
+        if (clickCount === 1) {
+            // Second click action
+            navigate("/pjmworksheet");
+        }
+        setClickCount(clickCount + 1);
+    };
+
     return (
-        <div className='toolBox'onClick={()=> navigate("/fws")}>
+        <div className='toolBox' onClick={handleClick}>
             <button style={{background: 'none', border: 'none'}}>
                 <span className='researchText'>Future</span>
                 <img src={redcircle} alt="" className='circle' />
@@ -18,7 +25,7 @@ const PJMButton = () => {
                 <span className='researchText'>Scenarios</span>
             </button>
         </div>
-    )
+    );
 }
 
-export default PJMButton
+export default FutureScenariosButton;

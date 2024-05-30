@@ -17,7 +17,7 @@ const ProcessLine = () => {
   };
 
   const handleSelectTool = (ToolComponent) => {
-    setCircles([...circles, { id: circles.length + 1, tool: ToolComponent }]);
+    setCircles([...circles, { id: circles.length + 1, tool: <ToolComponent /> }]);
     setShowPinLibrary(false);
   };
 

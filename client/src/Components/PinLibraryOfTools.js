@@ -289,15 +289,15 @@ const PinLibraryOfTools = ({ onClose, onSelectTool }) => {
 
           </div>
           <div className='ideationContainer'>
-          <div className='categoryText'>Snygga knappar</div>
+            <div className='categoryText'>Snygga knappar</div>
             <div className='iconRow'>
-              <div className='toolBox' onClick={() => handleToolClick(<PJMButton />)}>
+              <div className='toolBox' onClick={() => handleToolClick(PJMButton)}>
                 <PJMButton />
               </div>
-              <div className='toolBox' onClick={() => handleToolClick(<FutureScenariosButton />)}>
+              <div className='toolBox' onClick={() => handleToolClick(FutureScenariosButton)}>
                 <FutureScenariosButton />
               </div>
-              </div>
+            </div>
 
           </div>
         </div>
