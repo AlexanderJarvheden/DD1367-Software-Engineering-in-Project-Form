@@ -1,5 +1,5 @@
 import React, { useState,useRef, useEffect } from 'react';
-import { Stage, Layer, Text } from 'react-konva';
+import { Stage, Layer, Text, Line } from 'react-konva';
 import '../Assets/Styles/buttonmeny2.css';
 import menu_logo2 from '../Assets/Icons/menu_logo2.svg';
 
@@ -16,10 +16,16 @@ import picture from '../Assets/Icons/picture_icon.svg';
 function Sidebar2() {
     const [activeItem, setActiveItem] = useState('dashboard'); // Keeps track of the currently active item
 
+    const [isDrawingMode, setIsDrawingMode] = useState(false);
+    const [isMouseDown, setIsMouseDown] = useState(false);
+    const [lines, setLines] = useState([]);
+
     const [texts, setTexts] = useState([]);
     const [selectedTextId, setSelectedTextId] = useState(null);
     const [newTextValue, setNewTextValue] = useState("");
     const stageRef = useRef(null);
+
+    const layerRef = useRef(null);
 
     const handleTextDblClick = (text) => {
         setSelectedTextId(text.id);
@@ -69,9 +75,6 @@ function Sidebar2() {
         return null;
     };
     
-    
-    
-    
     const handleAddTextClick = () => {
         const stage = stageRef.current;
         const stageWidth = stage ? stage.width() : 800; // Default width if stage is not available
@@ -86,10 +89,39 @@ function Sidebar2() {
         setTexts([...texts, newText]);
     };
 
+    const handleMouseDown = (e) => {
+        if (isDrawingMode) {
+            setIsMouseDown(true);
+            const stage = stageRef.current;
+            const point = stage.getPointerPosition();
+            setLines([...lines, { points: [point.x, point.y] }]);
+        }
+    };
+
+    const handleMouseMove = (e) => {
+        if (isDrawingMode && isMouseDown) {
+            const stage = stageRef.current;
+            const point = stage.getPointerPosition();
+            const lastLine = lines[lines.length - 1];
+            lastLine.points = lastLine.points.concat([point.x, point.y]);
+
+            lines.splice(lines.length - 1, 1, lastLine);
+            setLines(lines.concat());
+        }
+    };
+
+    const handleMouseUp = () => {
+        setIsMouseDown(false);
+    };
+
+    const toggleDrawingMode = () => {
+        setIsDrawingMode(!isDrawingMode);
+    };
+
     const menuItems = [
         { name: 'dashboard', icon: teams2_icon, cursor: 'pointer', action: handleAddTextClick},
         { name: 'library', icon: clipper, cursor: 'pointer', action: handleAddTextClick},
-        { name: 'planner', icon: draw_icon, cursor: 'crosshair', action: handleAddTextClick},
+        { name: 'planner', icon: draw_icon, cursor: 'crosshair', action: toggleDrawingMode},
         { name: 'social', icon: text_icon, cursor: 'text', action: handleAddTextClick},
         { name: 'teams', icon: insert_icon, cursor: 'pointer', action: handleAddTextClick},
         { name: 'projects', icon: member, cursor: 'pointer', action: handleAddTextClick},
@@ -119,8 +151,8 @@ function Sidebar2() {
                     </div>
                 ))}
             </div>
-            <Stage style={{left: 100, position: 'relative'}} width={1400} height={1200}>
-                <Layer>
+            <Stage style={{left: 100, position: 'relative'}} width={1400} height={1200} ref={stageRef} onMouseDown={handleMouseDown} onMousemove={handleMouseMove} onMouseup={handleMouseUp}>
+                <Layer ref={layerRef}>
                     {texts.map((text) => (
                         <Text
                             key={text.id}
@@ -143,6 +175,17 @@ function Sidebar2() {
                                 });
                                 setTexts(updatedTexts);
                             }}
+                        />
+                    ))}
+                    {lines.map((line, i) => (
+                        <Line
+                            key={i}
+                            points={line.points}
+                            stroke="#df4b26"
+                            strokeWidth={2}
+                            tension={0.5}
+                            lineCap="round"
+                            globalCompositeOperation="source-over"
                         />
                     ))}
                 </Layer>
