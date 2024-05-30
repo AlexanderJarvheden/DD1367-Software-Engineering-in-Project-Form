@@ -1,6 +1,6 @@
 .filter-buttons {
 
-    width: calc(100% - 280px);
+    /* width: calc(100% - 280px); */
     height: 28px;
     display: flex;
     align-items: flex-start;
@@ -11,7 +11,7 @@
     /* Keep position fixed */
     top: 120px;
     /* Adjust top position */
-    left: 140px;
+    /* left: 140px; */
     /* Adjust left position */
     margin-top: 10px;
     /* Add margin-top to create space between the cards */

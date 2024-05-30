@@ -35,12 +35,15 @@ const ToolLibraryPage = () => {
     return (
         <div>
             <div className="tool-library-page" >
-                <FilterButtons setActiveFilter={setActiveFilter} />
-                {filteredCards.map((card, index) => (
-                    <Cards key={index} title={card.title} description={card.description} onUse={card.onUse} />
-                ))}
+                <div style={{width: 500}}>
+                    <FilterButtons setActiveFilter={setActiveFilter} />
+                    {filteredCards.map((card, index) => (
+                        <Cards key={index} title={card.title} description={card.description} onUse={card.onUse} />
+                    ))}
+                </div>
+                <div><Snaker nodes={nodes} /></div>
             </div>
-            <div className='snakeBackground'><Snaker nodes={nodes} /></div>
+            
         </div>
     );
 };

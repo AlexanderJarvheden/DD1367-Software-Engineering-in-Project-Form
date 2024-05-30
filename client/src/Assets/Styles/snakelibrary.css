@@ -1,9 +1,9 @@
 .snake-container {
     width: 511px;
     height: 360px;
-    position: absolute;
+    position: relative;
     top: 175px;
-    left: 860px;
+    left: 150px; 
     display: flex;
     flex-direction: column;
     align-items: center;

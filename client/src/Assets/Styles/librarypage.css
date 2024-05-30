@@ -1,13 +1,9 @@
 .tool-library-page {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Center children horizontally */
+    /*flex-direction: horizontal;
+    /* align-items: center; */
     justify-content: center;
-    /* Center children vertically */
     min-height: 100vh;
-    /* Full viewport height, adjust as necessary */
-    /* Full width */
     background: var(--Light, #F1F1F4);
 }
 
