@@ -9,84 +9,20 @@ import graph from '../Assets/Images/graphFUWS.svg';
 import Sidemenu from '../Components/PlannerSidemenu.js'
 
 const FutureScenariosWorksheet = () => {
-    const navBarStyle = { position: 'fixed', top: '27px', left: '145px', width: '100%' };
-    // const [texts, setTexts] = useState([]);
-    // const [selectedTextId, setSelectedTextId] = useState(null);
-    // const [newTextValue, setNewTextValue] = useState("");
-
-    // const handleTextDblClick = (text) => {
-    //     setSelectedTextId(text.id);
-    //     setNewTextValue(text.text);
-    // };
-
-    // const handleInputChange = (e) => {
-    //     setNewTextValue(e.target.value);
-    // };
-
-    // const handleInputBlur = () => {
-    //     const updatedTexts = texts.map(t => {
-    //         if (t.id === selectedTextId) {
-    //             return {
-    //                 ...t,
-    //                 text: newTextValue,
-    //             };
-    //         }
-    //         return t;
-    //     });
-    //     setTexts(updatedTexts);
-    //     setSelectedTextId(null);
-    // };
-
-    // const renderInputField = () => {
-    //     if (selectedTextId) {
-    //         const textObj = texts.find(t => t.id === selectedTextId);
-    //         if (textObj) {
-    //             return (
-    //                 <input
-    //                     type="text"
-    //                     value={newTextValue}
-    //                     onChange={handleInputChange}
-    //                     onBlur={handleInputBlur}
-    //                     style={{
-    //                         position: 'absolute',
-    //                         top: textObj.y,
-    //                         left: textObj.x,
-    //                         fontSize: '18px',
-    //                         border: '1px solid black',
-    //                     }}
-    //                     autoFocus
-    //                 />
-    //             );
-    //         }
-    //     }
-    //     return null;
-    // };
-    
-    
-    
-    
-    // const handleAddTextClick = () => {
-    //     const newText = {
-    //         x: 100,  // Starting x position in the canvas
-    //         y: 100,  // Starting y position in the canvas
-    //         text: "New Text",  // Default text content
-    //         id: `text_${texts.length}`,  // Unique ID for each text
-    //     };
-    //     setTexts([...texts, newText]);
-    // };
+    const navBarStyle = { position: 'fixed', top: '27px', left: '145px' };
 
     return (
         <div>
             <Sidemenu/>
             <ToolNavBar style={navBarStyle} />
-            <div className='introWorksheet' style={{ position: 'fixed', top: '27px', right: '30px' }}>
+            {/* <div className='introWorksheet' style={{ position: 'fixed', top: '27px', right: '30px' }}>
                 <button className='intro'>
                     <span className='introTxt'>Intro</span>
                 </button>
                 <button className='worksheet'>
                     <span className='introTxt'>Worksheet</span>
                 </button>
-            </div>
+            </div> */}
             <span className='headerText'>Future scenarios</span>
             <span className='text'>Future scenarios is about forcing decision makers to consider futures that are outside of their mental models.</span>
             <span className='diagramText' style={{ top: '271px' }}>MOST LIKELY</span>
@@ -108,50 +44,6 @@ const FutureScenariosWorksheet = () => {
             <div className='graphContainer'>
                 <img src={graph} alt='' />
             </div>
-
-            {/* Konva Canvas */}
-            {/* <div style={{ 
-                position: 'absolute', 
-                top: '25%', 
-                left: '10%', 
-                width: '1200px', 
-                height: '560px', 
-                border: '1px solid black' 
-            }}>             
-                
-                {/* <Stage width={1200} height={560}> 
-                <Stage >
-                    <Layer>
-                        {texts.map((text) => (
-                            <Text
-                                key={text.id}
-                                x={text.x}
-                                y={text.y}
-                                text={text.text}
-                                draggable
-                                fontSize={18}
-                                onDblClick={() => handleTextDblClick(text)}
-                                onDragEnd={(e) => {
-                                    const updatedTexts = texts.map(t => {
-                                        if (t.id === text.id) {
-                                            return {
-                                                ...t,
-                                                x: e.target.x(),
-                                                y: e.target.y(),
-                                            };
-                                        }
-                                        return t;
-                                    });
-                                    setTexts(updatedTexts);
-                                }}
-                            />
-                        ))}
-                    </Layer>
-                </Stage>
-                {renderInputField()}
-            <button onClick={handleAddTextClick} style={{ position: 'fixed', bottom: '20px', right: '20px' }}>
-                Add Text
-            </button> */}
         </div>
     );
 }

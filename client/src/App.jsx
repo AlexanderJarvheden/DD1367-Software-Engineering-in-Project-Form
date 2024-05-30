@@ -3,6 +3,8 @@ import {  useState } from "react";
 import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import PJMWorksheet from './Tools/PJMWorksheet.js'
 import FutureScenariosWorksheet from './Tools/FutureScenariosWorksheet.js'
+import FutureScenariosIntro from './Tools/FutureScenariosIntro.js';
+import FutureScenarios from './Tools/FutureScenarios.js';
 import Landingpage from './Components/Landingpage.js';
 import SignupPage from './Components/SignupPage';
 import LoginPage from './Components/LoginPage.js';
@@ -52,7 +54,8 @@ function App() {
               <Route path="/pinlibraryoftools" element={<PinLibraryOfTools />} />
               <Route path="/postsignuppage" element={<PostSignUpPage />} />
               <Route path="/pjmworksheet" element={<PJMWorksheet />} />
-              <Route path="/futurescenarios" element={<FutureScenariosWorksheet />} />
+              <Route path="/futurescenarios" element={<FutureScenarios />} />
+              <Route path="/introfuturescenarios" element={<FutureScenariosIntro />} />
               <Route path="/toolnavbar" element={<ToolNavBar />} />
               <Route path="/teams" element={<ChooseTeam />} />
               <Route path="/library" element={<Library />} />

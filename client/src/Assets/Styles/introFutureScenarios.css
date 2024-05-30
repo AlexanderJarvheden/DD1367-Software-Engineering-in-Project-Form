@@ -1,0 +1,252 @@
+.headerFS {
+    display: flex;
+    width: 1074px;
+    height: 120px;
+    padding: 8px 0px;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-shrink: 0;
+    border-bottom: 2px solid var(--Bright-Green, #CD2626);
+    top: 106px;
+    position: relative;
+}
+
+.FSicon {
+    width: 84px;
+    height: 84px;
+    flex-shrink: 0;
+}
+
+.secondItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.researchTextHeader {
+    color: var(--Dark-Green-forest, #CD2626);
+    font-family: Futura, 'sans-serif';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    /* 12px */
+    letter-spacing: 0.65px;
+    text-transform: uppercase;
+}
+
+.futureScenariosText {
+    color: var(--Dark-Deep-purple, #1E154C);
+    font-family: Futura;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    /* 112.5% */
+    letter-spacing: -0.32px;
+}
+
+.innerHeaderFrame {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 24px;
+    flex: 1 0 0;
+}
+
+.recommendedFor {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 24px;
+    flex: 1 0 0;
+}
+
+.headerIcon {
+    width: 24px;
+    height: 24px;
+}
+
+.greyText {
+    color: var(--Neutrals-Gray-500, #B4B3BA);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Futura;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    /* 125% */
+}
+
+.blackText {
+    color: var(--Neutrals-Gray-800, #302F33);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Futura;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.descriptionContainer {
+    display: flex;
+    width: 1074px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+.topLeft {
+    display: flex;
+    width: 539px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+    align-self: stretch;
+}
+
+.smallText {
+    width: 451px;
+    color: #303030;
+    font-family: Futura;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    /* 12px */
+    letter-spacing: 0.65px;
+    text-transform: uppercase;
+}
+
+.descriptionTitle {
+    color: var(--Dark-Deep-purple, #1E154C);
+    font-family: Futura;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    /* 116.667% */
+    letter-spacing: -0.36px;
+}
+
+.descriptionToolText {
+    color: var(--Neutrals-Gray-800, #302F33);
+    font-family: Futura;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21px;
+    /* 150% */
+}
+
+.descriptionToolContainer {
+    display: flex;
+    width: 538px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+}
+
+.topLeftText {
+    color: var(--Dark-Deep-purple, #1E154C);
+    font-family: Futura;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    /* 112.5% */
+    letter-spacing: -0.32px;
+}
+
+.instructionsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 44px;
+    align-self: stretch;
+}
+
+.instructionRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 33px;
+    align-self: stretch;
+}
+
+.instructionNumber {
+    color: var(--Dark-Deep-purple, #1E154C);
+
+    /* Heading large */
+    font-family: "Open Sans";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.72px;
+}
+
+.instructionRowText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+.instructionRowTitle {
+    color: var(--Dark-Deep-purple, #1E154C);
+    font-family: Futura;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    /* 111.111% */
+    letter-spacing: -0.225px;
+}
+
+.instructionRowDescription {
+    color: var(--Neutrals-Gray-800, #302F33);
+    font-family: Futura;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21px;
+    /* 150% */
+}
+
+.introWorksheet {
+    position: fixed;
+    top: 27px;
+    right: 30px;
+    z-index: 100; /* Ensure this is higher than the canvas */
+}
+
+.intro, .worksheet {
+    display: flex;
+    padding: 14px 16px;
+    align-items: flex-start;
+    gap: 10px;
+    background: #FCFCFA;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.10) inset;
+}
+
+.intro.active, .worksheet.active {
+    box-shadow: 0px -3px 0px 0px #483D8B inset; /* Purple bottom border */
+}
+
+.introTxt {
+    color: var(--Neutral-100, #0A0A0A);
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.084px;
+}

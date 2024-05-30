@@ -11,9 +11,11 @@ import insert_icon from '../Assets/Icons/insert_icon.svg';
 import teams2_icon from '../Assets/Icons/teams2_icon.svg';
 import text_icon from '../Assets/Icons/text_icon.svg';
 import picture from '../Assets/Icons/picture_icon.svg';
+import {useNavigate} from 'react-router-dom';
 
 
 function Sidebar2() {
+    const navigate = useNavigate()
     const [activeItem, setActiveItem] = useState('dashboard'); // Keeps track of the currently active item
 
     const [isDrawingMode, setIsDrawingMode] = useState(false);
@@ -132,7 +134,7 @@ function Sidebar2() {
     return (
         <div>
             <div className="sidebar2">
-                <div className="logo2">
+                <div className="logo2" onClick={() => navigate('/')}>
                     <img src={menu_logo2} alt="Menu Logo" />
                 </div>
                 {menuItems.map(item => (
