@@ -1,65 +1,62 @@
 import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import '../Assets/Styles/LoginPage.css';
-import Navigationbar from './Navigationbar.js';
+
+import Navbar from '../Components/Navigationbar.js';
+
+/*import Navigationbar from './Navigationbar.js';*/
+
 
 //import left_icon from '../Assets/left.svg'
 
 
-function LoginPage() {
-
+function LoginPage({ handleLogin }) {
     const [inputs, setInputs] = useState({
         email: '',
         password: '',
     });
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
-        const {name, value} = e.target;
-        setInputs(values => ({...values, [name]: value}));
-    }
-    
+        const { name, value } = e.target;
+        setInputs(prev => ({ ...prev, [name]: value }));
+    };
+
     const handleSubmit = (e) => {
-		e.preventDefault();
-		if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(inputs.email)) {
-            alert('Please enter a valid email address.');
-            return;
-        }
-        
-		if (inputs.password.length < 5) {
-			alert('Your password must be at least 8 characters long.');
-			return; 
-		}
-		console.log(inputs.email);
-		console.log(inputs.password);
-        fetch('/login', {
-			method: 'POST',
-			headers: {'Content-Type': 'application/json'},
-			body: JSON.stringify(inputs),
-		})
-		.then(response => {
-			if (!response.ok) { // Check if the response status code was not okay
-				return response.json().then(errorData => {
-					// Optionally, handle specific server-sent error messages
-					throw new Error(`Server responded with ${response.status}: ${errorData.message}`);
-				});
-			}
-			return response.json(); // This will only parse the response as JSON if the response was okay
-		})
-		.then(data => {
-			// Handle success (like redirecting to a thank you page or showing a success message)
-			//window.location.href = 'http://localhost:3000/contact';
-		})
-		.catch((error) => {
-			console.error('Error:', error);
-			// Handle error (like showing an error message to the user)
-			//window.location.href = 'http://localhost:3000/login';
-		});
-	}
+        e.preventDefault();
+        fetch('http://localhost:3000/api/login', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                email: inputs.email,
+                password: inputs.password
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                handleLogin();  // This should update the login state in App.jsx
+                navigate('/dashboardPage');  // Navigate to the dashboard page after successful login
+            } else {
+                alert('Login failed: ' + (data.message || 'Invalid credentials'));
+            }
+        })
+        .catch(error => {
+            console.error('Login Error:', error);
+            alert('Login error: ' + error.message);
+        });
+    };
     return (
 
         <div>
-            <Navigationbar/>
-            <div className='login-box' style={{top: '80px', position: 'relative'}}>
+
+            <Navbar />
+            <div className='login-box'>
+
+            /*<Navigationbar/>
+            <div className='login-box' style={{top: '80px', position: 'relative'}}>*/
+
                 <span className="login-title">
                     Log in to use all tools!
                 </span>

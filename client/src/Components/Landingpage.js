@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 import '../Assets/Styles/landingpage.css'
-import Navigationbar from './Navigationbar'
+import Navbar from '../Components/Navigationbar.js';
 import Sneakpeak from '../Assets/Images/Landingpage_sneakpeak.png'
 import Logo from '../Assets/Images/Landingpage_logo.png'
 import email from '../Assets/Icons/Email.svg'
@@ -12,7 +12,11 @@ const Landingpage = () => {
     const navigate = useNavigate();
   return (
     <div>
-      <Navigationbar/>
+
+      <Navbar />
+
+      /*<Navigationbar/>*/
+
       <div className='landingpage-background'>
         {/* <div className='landingpage-innerbackground'> */}
           <div className='inner-content'>
