@@ -15,8 +15,8 @@ import Buttons from '../Components/DashboardPage.js'
 const FutureScenariosIntro = () => {
     return (
         <div>
-            <Buttons/>
-            <div style={{ left: '50px', position: 'relative', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%', display: 'flex' }}>
+            <Buttons />
+            <div style={{ left: '100px', position: 'relative', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%', display: 'flex' }}>
                 <div className='headerFS'>
                     <div className='FSicon'>
                         <FutureScenarioButton className='FSicon' />

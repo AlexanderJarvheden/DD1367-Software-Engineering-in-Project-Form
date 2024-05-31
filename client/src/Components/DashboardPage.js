@@ -1,7 +1,8 @@
 // DashboardPage.js
 import React, { useState } from 'react';
-import Sidebar from './ButtonMeny.js';
+// import Sidebar from './ButtonMeny.js';
 import Header from '../Components/DashboardHeader.js';
+import Sidebar from '../Components/ButtonMeny.js';
 
 function DashboardPage() {
     const [isSidebarExpanded, setSidebarExpanded] = useState(true);
