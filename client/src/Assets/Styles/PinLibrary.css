@@ -2,7 +2,7 @@
   align-items: center;
   flex-direction: column;
   width: 715px;
-  height: 700px;
+  height: 800px;
   flex-shrink: 0;
   border-radius: 18px;
   border: 3px solid #DCDCDC;
@@ -18,9 +18,7 @@
   align-items: flex-start;
   gap: 32px;
   height: 600px;
-  /* Set the height of the container */
   overflow-y: auto;
-  /* Add a vertical scrollbar */
 }
 
 .closeButton {
@@ -34,6 +32,7 @@
   padding: 4px 12px 4px 8px;
   border-radius: 8px;
   background: var(--Neutrals-Gray-200, #F1F0F7);
+  z-index: 1000; /* Added z-index to bring the button in front */
 }
 
 .closeText {
@@ -45,7 +44,6 @@
   line-height: normal;
 }
 
-
 .pinLibraryText {
   position: relative;
   color: #3E3E3E;
@@ -56,14 +54,15 @@
   font-style: normal;
   font-weight: 800;
   line-height: 50.4px;
-  /* 157.5% */
   letter-spacing: -0.64px;
-  top: 66px;
+  top: -20px;
+  width: 80%; /* Adjusted width to prevent overlap */
+  margin: 0 auto; /* Centering the text */
 }
 
 .breadText {
   position: relative;
-  top: 70px;
+  top: -25px;
   color: #000;
   text-align: center;
   font-family: Roboto, Arial, sans-serif;
@@ -71,6 +70,8 @@
   font-style: normal;
   font-weight: 300;
   line-height: 32.4px;
+  /*width: 80%; /* Adjusted width to prevent overlap */
+  /*margin: 0 auto; /* Centering the text */
   /* 202.5% */
 }
 
@@ -91,7 +92,6 @@
   display: flex;
   flex-direction: horizontal;
   flex-wrap: wrap;
-  /* Wrap children elements to the next line if needed */
   align-items: flex-start;
   gap: 10.8px;
 }
@@ -110,7 +110,6 @@
   font-style: bold;
   font-weight: 500;
   line-height: 25.2px;
-  /* 116.667% */
   letter-spacing: -0.432px;
 }
 
@@ -122,19 +121,15 @@
   justify-content: center;
   align-items: center;
   color: #AE2709;
-  color: var(--Failure-dark, #AE2709);
   text-align: center;
   font-family: Roboto, Arial, sans-serif;
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
-  /* 12px */
   letter-spacing: 1.2px;
   text-transform: uppercase;
 }
-
-
 
 .ideationText {
   height: 14px;
@@ -150,7 +145,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
-  /* 12px */
   letter-spacing: 1.2px;
   text-transform: uppercase;
 }
@@ -169,22 +163,17 @@
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
-  /* 12px */
   letter-spacing: 1.2px;
   text-transform: uppercase;
-
 }
 
 .buttonContainer {
   background: none;
-  /* Remove default button background */
   border: none;
-  /* Remove default button border */
   padding: 0;
-  /* Remove default button padding */
 }
 
-.circle {
+.pin-library-circle {
   width: 45px;
   height: 45px;
   flex-shrink: 0;
@@ -225,7 +214,6 @@
   font-size: 28.333px;
   font-style: normal;
   line-height: 100%;
-  /* 28.333px */
   letter-spacing: 1.7px;
   height: 24px;
   width: 16px;

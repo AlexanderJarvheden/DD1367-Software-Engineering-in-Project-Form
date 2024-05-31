@@ -3,6 +3,8 @@ import FilterButtons from '../Components/LibraryComponents/FilterButtons';
 import Cards from '../Components/LibraryComponents/CardsLibrary';
 import Snaker from '../Components/LibraryComponents/SnakeLibrary';
 import '../Assets/Styles/librarypage.css';
+import Buttons from './DashboardPage.js'
+
 
 const ToolLibraryPage = () => {
     const [nodes, setNodes] = useState([]); // Store node data as an array of objects
@@ -34,6 +36,7 @@ const ToolLibraryPage = () => {
 
     return (
         <div>
+            <Buttons/>
             <div className="tool-library-page" >
                 <div style={{width: 500}}>
                     <FilterButtons setActiveFilter={setActiveFilter} />

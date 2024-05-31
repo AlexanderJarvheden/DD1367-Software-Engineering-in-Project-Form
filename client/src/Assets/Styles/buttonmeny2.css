@@ -1,6 +1,6 @@
 .sidebar2 {
     width: 75px;
-    height: 920px;
+    height: 100%;
     flex-shrink: 0;
     border-right: 1px solid var(--black-10);
     background: var(--white-100);
@@ -9,6 +9,7 @@
     left: 0;
     top: 0;
     transition: width 0.5s ease;
+    z-index: 5000;
 }
 
 .menu-item2 {
@@ -48,4 +49,99 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+}
+
+.shapes-menu {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    background-color: #f3e6ff;
+    border: 1px solid #d1c4e9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.shapes-menu-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #6a1b9a;
+}
+
+.shapes-menu-item {
+    margin: 5px 0;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+    color: #6a1b9a;
+}
+
+.shapes-menu-item:hover {
+    background-color: #e1bee7;
+}
+
+.shapes-menu-config {
+    margin-top: 10px;
+}
+
+.shapes-menu-config label {
+    display: block;
+    margin-bottom: 5px;
+    color: #6a1b9a;
+}
+
+.shapes-menu-config input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    border: 1px solid #d1c4e9;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background-color: #f3e6ff;
+    color: #6a1b9a;
+}
+
+.drawing-options {
+    position: absolute;
+    top: 150px;
+    /* Adjust to align with the draw icon */
+    left: 75px;
+    /* Positioning it right beside the sidebar */
+    background-color: #f3e6ff;
+    border: 1px solid #d1c4e9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.drawing-options-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #6a1b9a;
+}
+
+.drawing-options label {
+    display: block;
+    margin-bottom: 5px;
+    color: #6a1b9a;
+}
+
+.drawing-options input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    border: 1px solid #d1c4e9;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background-color: #f3e6ff;
+    color: #6a1b9a;
 }

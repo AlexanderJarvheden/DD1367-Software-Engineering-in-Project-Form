@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import '../Assets/Styles/SignupPage.css';
+
+
 import { useNavigate } from "react-router-dom";
 import Navbar from '../Components/Navigationbar.js';
+
+/*import Navigationbar from './Navigationbar.js';*/
+
+
 
 function SignupPage() {
 	const [inputs, setInputs] = useState({
@@ -78,6 +84,7 @@ function SignupPage() {
 
 	return (
 		<div>
+
 		<Navbar />
 		<div className="signup-container">
 			<h2 className="signup-title">Sign up to try our tools!</h2>
@@ -93,6 +100,24 @@ function SignupPage() {
 				</div>
 				<button type="submit" className="signup-button">Sign up</button>
 			</form>
+
+			/*<Navigationbar />
+			<div className="signup-container">
+				<h2 className="signup-title">Sign up to try our tools!</h2>
+				<form className="signup-form" onSubmit={handleSubmit}>
+					<input type="text" name="name" placeholder="Name" value={inputs.name} onChange={handleChange} />
+					<input type="email" name="email" placeholder="Username (e-mail)" value={inputs.email} onChange={handleChange} />
+					<input type="password" name="password" placeholder="Password" value={inputs.password} onChange={handleChange} />
+					<input type="tel" name="phonenumber" placeholder="Phone number" value={inputs.phonenumber} onChange={handleChange} />
+					<input type="text" name="company" placeholder="Company" value={inputs.company} onChange={handleChange} />
+					<div className="signup-terms">
+						<input type="checkbox" id="terms" checked={termsAccepted} onChange={handleCheckboxChange} />
+						<label htmlFor="terms">I agree with the terms and conditions and GDPR</label>
+					</div>
+					<button type="submit" className="signup-button">Sign up</button>
+				</form>
+			</div>*/
+
 		</div>
 		</div>
 	);

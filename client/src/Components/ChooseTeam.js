@@ -6,6 +6,7 @@ import Picture2 from '../Assets/Icons/teamspic2.png';
 import Picture3 from '../Assets/Icons/teamspic3.png';
 import Picture4 from '../Assets/Icons/teamspic4.png';
 import addTeam from '../Assets/Icons/plussi.png';
+import Buttons from './DashboardPage.js'
 
 const ChooseTeam = () => {
   const initialTeams = [
@@ -41,6 +42,7 @@ const ChooseTeam = () => {
 
   return (
     <div>
+      <Buttons />
       <div className='textContainer'>
         <span className='chooseTeamText'>Choose Team</span>
         <span className='questionText'>Which team do you want to work with today</span>

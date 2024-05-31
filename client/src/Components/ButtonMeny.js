@@ -28,7 +28,7 @@ function Sidebar({ isOpen }) {
     const sidebarClass = isOpen ? "sidebar open" : "sidebar closed";
 
     return (
-        <div className={sidebarClass}>
+        <div className={sidebarClass} style={{width: '200px'}}>
             <div className="logo">
                 <img src={menu_logo} alt="Menu Logo" />
             </div>

@@ -2,7 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import '../Assets/Styles/LoginPage.css';
+
 import Navbar from '../Components/Navigationbar.js';
+
+/*import Navigationbar from './Navigationbar.js';*/
+
 
 //import left_icon from '../Assets/left.svg'
 
@@ -46,8 +50,13 @@ function LoginPage({ handleLogin }) {
     return (
 
         <div>
+
             <Navbar />
             <div className='login-box'>
+
+            /*<Navigationbar/>
+            <div className='login-box' style={{top: '80px', position: 'relative'}}>*/
+
                 <span className="login-title">
                     Log in to use all tools!
                 </span>
