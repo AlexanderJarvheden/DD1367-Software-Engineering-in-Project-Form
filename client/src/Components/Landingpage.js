@@ -7,10 +7,12 @@ import Logo from '../Assets/Images/Landingpage_logo.png'
 import email from '../Assets/Icons/Email.svg'
 import arrow from '../Assets/Icons/left_arrow.svg'
 
+
 const Landingpage = () => {
     const navigate = useNavigate();
   return (
     <div>
+      <Navigationbar/>
       <div className='landingpage-background'>
         {/* <div className='landingpage-innerbackground'> */}
           <div className='inner-content'>

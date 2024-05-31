@@ -38,7 +38,12 @@ import darts from '../Assets/Icons/darts.png';
 import PJMButton from '../Tools/ToolButtons/PJMButton.js';
 import FutureScenariosButton from '../Tools/ToolButtons/FutureScenariosButton.js';
 
-const PinLibraryOfTools = ({ onClose }) => {
+
+
+const PinLibraryOfTools = ({ onClose, onSelectTool }) => {
+  const handleToolClick = (ToolComponent) => {
+    onSelectTool(ToolComponent);
+  };
   return (
     <div className='libraryContainer'>
       <button className='closeButton' onClick={onClose}>
@@ -286,9 +291,12 @@ const PinLibraryOfTools = ({ onClose }) => {
           <div className='ideationContainer'>
             <div className='categoryText'>Snygga knappar</div>
             <div className='iconRow'>
-              <PJMButton />
-              <FutureScenariosButton />
-
+              <div className='toolBox' onClick={() => handleToolClick(PJMButton)}>
+                <PJMButton />
+              </div>
+              <div className='toolBox' onClick={() => handleToolClick(FutureScenariosButton)}>
+                <FutureScenariosButton />
+              </div>
             </div>
 
           </div>

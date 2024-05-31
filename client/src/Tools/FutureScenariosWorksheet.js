@@ -15,14 +15,6 @@ const FutureScenariosWorksheet = () => {
         <div>
             <Sidemenu/>
             <ToolNavBar style={navBarStyle} />
-            {/* <div className='introWorksheet' style={{ position: 'fixed', top: '27px', right: '30px' }}>
-                <button className='intro'>
-                    <span className='introTxt'>Intro</span>
-                </button>
-                <button className='worksheet'>
-                    <span className='introTxt'>Worksheet</span>
-                </button>
-            </div> */}
             <span className='headerText'>Future scenarios</span>
             <span className='text'>Future scenarios is about forcing decision makers to consider futures that are outside of their mental models.</span>
             <span className='diagramText' style={{ top: '271px' }}>MOST LIKELY</span>

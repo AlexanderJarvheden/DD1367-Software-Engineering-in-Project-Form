@@ -25,7 +25,7 @@ import './App.css';
 
 function App() {
     //Kolla state på om user är logged in eller logged out
-    const [loggedIn, setLoggedIn ] = useState(true)
+    const [loggedIn, setLoggedIn ] = useState(false)
     
     const toggleRoute = () =>{
         setLoggedIn(!loggedIn)
