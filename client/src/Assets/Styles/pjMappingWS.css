@@ -53,7 +53,7 @@
     letter-spacing: -0.084px;
 }
 
-.title {
+.PJMtitle {
     color: var(--EIG-purple-adaption, #532E8F);
     text-align: center;
 
@@ -66,10 +66,11 @@
     /* 125% */
     top: 105px;
     left: 161px;
+    position: absolute;
 }
 
 .bulletList {
-    width: 510px;
+    /* width: 510px; */
     color: #000;
 
     /* Heading/M */
@@ -79,6 +80,9 @@
     font-weight: 500;
     line-height: 20px;
     /* 125% */
+    top: 175px;
+    left: 161px;
+    position: absolute;
 }
 
 .initialUseCycle {
@@ -94,12 +98,16 @@
     font-weight: 500;
     line-height: 20px;
     /* 125% */
+    top: 154px; 
+    right: 253px;
+    position: absolute;
 }
 
 .boxes {
     display: inline-flex;
     align-items: flex-start;
     gap: 32px;
+    z-index: -10;
 }
 
 .box {

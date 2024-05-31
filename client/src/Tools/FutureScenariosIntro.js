@@ -16,7 +16,7 @@ const FutureScenariosIntro = () => {
     return (
         <div>
             <Buttons/>
-            <div style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%', display: 'flex' }}>
+            <div style={{ left: '50px', position: 'relative', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%', display: 'flex' }}>
                 <div className='headerFS'>
                     <div className='FSicon'>
                         <FutureScenarioButton className='FSicon' />

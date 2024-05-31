@@ -153,7 +153,7 @@ function Sidebar2() {
                     </div>
                 ))}
             </div>
-            <Stage style={{left: 100, position: 'relative'}} width={1400} height={1200} ref={stageRef} onMouseDown={handleMouseDown} onMousemove={handleMouseMove} onMouseup={handleMouseUp}>
+            <Stage style={{left: 100, position: 'absolute'}} width={1400} height={1200} ref={stageRef} onMouseDown={handleMouseDown} onMousemove={handleMouseMove} onMouseup={handleMouseUp}>
                 <Layer ref={layerRef}>
                     {texts.map((text) => (
                         <Text
