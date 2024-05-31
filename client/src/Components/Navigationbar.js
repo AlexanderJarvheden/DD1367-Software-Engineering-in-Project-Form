@@ -5,13 +5,14 @@ import { HiOutlineBars3 } from "react-icons/hi2";
 import { Box, Drawer, ListItem, ListItemButton, ListItemIcon, ListItemText, } from "@mui/material"
 import { useNavigate } from 'react-router-dom';
 
+
 /**
  * Written by Alexander Järvheden
  * inspired by https://www.youtube.com/watch?v=GVjIflROwJ4&ab_channel=TheHyperArt
  * @returns 
  */
 
-const Navigationbar = () => {
+function Navigationbar() {
     const navigate = useNavigate();
 
     // Used to make sure that the navigation bar is responsible with smaller devices as well

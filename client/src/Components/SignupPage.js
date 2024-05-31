@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import '../Assets/Styles/SignupPage.css';
+import { useNavigate } from "react-router-dom";
+import Navbar from '../Components/Navigationbar.js';
 
 function SignupPage() {
 	const [inputs, setInputs] = useState({
@@ -10,6 +12,7 @@ function SignupPage() {
 		company: ''
 	});
 	const [termsAccepted, setTermsAccepted] = useState(false);
+	const navigate = useNavigate();
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -62,6 +65,7 @@ function SignupPage() {
 				return response.json(); // This will only parse the response as JSON if the response was okay
 			})
 			.then(data => {
+				navigate('/postsignuppage'); 
 				// Handle success (like redirecting to a thank you page or showing a success message)
 				//window.location.href = 'http://localhost:3000/contact';
 			})
@@ -73,6 +77,8 @@ function SignupPage() {
 	}
 
 	return (
+		<div>
+		<Navbar />
 		<div className="signup-container">
 			<h2 className="signup-title">Sign up to try our tools!</h2>
 			<form className="signup-form" onSubmit={handleSubmit}>
@@ -87,6 +93,7 @@ function SignupPage() {
 				</div>
 				<button type="submit" className="signup-button">Sign up</button>
 			</form>
+		</div>
 		</div>
 	);
 }
