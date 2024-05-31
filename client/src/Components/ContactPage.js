@@ -1,10 +1,13 @@
 import React from 'react'
 import '../Assets/Styles/ContactPage.css'
 import logo from '../Assets/Images/plannerLogo.png'
+import Navbar from '../Components/Navigationbar.js';
 
 
 const ContactPage = () => {
   return (
+    <div>
+    <Navbar />
     <div className='mainContainerContact'>
         <div className='leftContainer'>
             <span className='rainbowText'>Want to get in contact?</span>
@@ -14,6 +17,7 @@ const ContactPage = () => {
         <div className='image'>
             <img src={logo} alt=""/>
         </div>
+    </div>
     </div>
   )
 }
