@@ -3,6 +3,7 @@ import { Stage, Layer, Text, Line, Rect, Circle, Image as KonvaImage } from 'rea
 import '../Assets/Styles/buttonmeny2.css';
 import menu_logo2 from '../Assets/Icons/menu_logo2.svg';
 
+
 import member from '../Assets/Icons/addmember_icon.svg';
 import clipper from '../Assets/Icons/clipper_icon.svg';
 import draw_icon from '../Assets/Icons/draw_icon.svg';

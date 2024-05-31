@@ -1,6 +1,6 @@
 // DashboardPage.js
 import React, { useState } from 'react';
-import Sidebar from '../Components/ButtonMeny.js';
+import Sidebar from './ButtonMeny.js';
 import Header from '../Components/DashboardHeader.js';
 
 function DashboardPage() {
