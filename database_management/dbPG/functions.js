@@ -66,28 +66,43 @@ async function addUser(userData) {
 
 export { addUser };
 
+
 async function loginUser(email, password) {
     const client = await pool.connect();
     try {
+        // Query to fetch user details including the password hash
         const query = `
-        SELECT u.UserID, u.Name, u.Password 
-        FROM users u 
-        JOIN User_Mailaddress m ON u.UserID = m.UserID
-        WHERE m.Mailaddress = $1`;
+            SELECT u.UserID, u.Name, u.Password 
+            FROM users u 
+            JOIN User_Mailaddress m ON u.UserID = m.UserID
+            WHERE m.Mailaddress = $1`;
         const { rows } = await client.query(query, [email]);
         
-        if(rows.length == 1) {
+        // Check if user was found
+        if (rows.length === 1) {
             const user = rows[0];
-            const match = await bcrypt.compare(password, user.password); //kryptera input och jämför med db
-            if (match) {
-                return {success: true, user: {userID: user.userid, name: user.name}};
+            console.log("User data retrieved:", user);  // Log retrieved user data
+            
+            // Ensure the password is provided and user has a password hash before comparing
+            if (password && user.password) {
+                const match = await bcrypt.compare(password, user.password);
+                if (match) {
+                    console.log("User verified");  // Log successful verification
+                    return { success: true, user: { userID: user.UserID, name: user.Name } };
+                } else {
+                    return { success: false, message: "Invalid password" };
+                }
+            } else {
+                console.log("Missing password or hash:", { requestPassword: password, storedHash: user.password });
+                return { success: false, message: "Missing password or hash" };
             }
-            console.log("User verified");
+        } else {
+            console.log("No user found with that email");
+            return { success: false, message: "No user found with that email" };
         }
-        return {success: false, message: "Wrong password or email"};
     } catch (error) {
-        console.error('Error occured: ', error);
-        return { success: false, message: "Error with DB"};
+        console.error('Login error occurred:', error);
+        return { success: false, message: "Error with DB", error: error.toString() };
     } finally {
         client.release();
     }
