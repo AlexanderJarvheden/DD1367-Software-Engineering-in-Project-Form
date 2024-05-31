@@ -13,11 +13,11 @@ const ContactPage = () => {
   return (
     <div>
 
-    <Navbar />
-    <div className='mainContainerContact'>
+      <Navbar />
+      <div className='mainContainerContact'>
 
-      /*<Navigationbar/>
-      <div className='mainContainerContact'> */
+        {/* /*<Navigationbar/> */}
+        {/* <div className='mainContainerContact'> */}
 
         <div className='leftContainer'>
           <span className='rainbowText'>Want to get in contact?</span>
@@ -28,7 +28,6 @@ const ContactPage = () => {
           <img src={logo} alt="" />
         </div>
       </div>
-    </div>
     </div>
   )
 }

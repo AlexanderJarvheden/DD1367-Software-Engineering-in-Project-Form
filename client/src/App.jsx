@@ -1,5 +1,5 @@
 import React from 'react'
-import {  useState } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import PJMWorksheet from './Tools/PJMWorksheet.js'
 import FutureScenariosWorksheet from './Tools/FutureScenariosWorksheet.js'
@@ -25,11 +25,11 @@ import './App.css';
 
 function App() {
     //Kolla state på om user är logged in eller logged out
-    const [loggedIn, setLoggedIn ] = useState(true)
-    
-    const toggleRoute = () =>{
-        setLoggedIn(!loggedIn)
-    }
+    const [loggedIn, setLoggedIn] = useState(false)
+
+    // const toggleRoute = () => {
+    //     setLoggedIn(!loggedIn)
+    // }
 
     const handleLogin = () => {
         setLoggedIn(true)
@@ -45,24 +45,25 @@ function App() {
         <>
             {/* {loggedIn ? <DashboardPage /> : <Navigationbar />} */}
             <Routes>
-              <Route exact path="/" element={ loggedIn ? <DashboardPage /> : <Landingpage />} />
-              <Route path="/planner" element={<ProcessLine />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/signup" element={<SignupPage />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/home" element={<PlaceholderForHome />} />
-              <Route path="/pinlibraryoftools" element={<PinLibraryOfTools />} />
-              <Route path="/postsignuppage" element={<PostSignUpPage />} />
-              <Route path="/pjmworksheet" element={<PJMWorksheet />} />
-              <Route path="/futurescenarios" element={<FutureScenarios />} />
-              <Route path="/introfuturescenarios" element={<FutureScenariosIntro />} />
-              <Route path="/toolnavbar" element={<ToolNavBar />} />
-              <Route path="/teams" element={<ChooseTeam />} />
-              <Route path="/library" element={<Library />} />
-              <Route path="*" element={<Navigate to="/" />} />
+                <Route path="/login" element={<LoginPage handleLogin={handleLogin} />} />
+                <Route exact path="/" element={loggedIn ? <DashboardPage /> : <Landingpage />} />
+                <Route path="/planner" element={<ProcessLine />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/signup" element={<SignupPage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/home" element={<PlaceholderForHome />} />
+                <Route path="/pinlibraryoftools" element={<PinLibraryOfTools />} />
+                <Route path="/postsignuppage" element={<PostSignUpPage />} />
+                <Route path="/pjmworksheet" element={<PJMWorksheet />} />
+                <Route path="/futurescenarios" element={<FutureScenarios />} />
+                <Route path="/introfuturescenarios" element={<FutureScenariosIntro />} />
+                <Route path="/toolnavbar" element={<ToolNavBar />} />
+                <Route path="/teams" element={<ChooseTeam />} />
+                <Route path="/library" element={<Library />} />
+                <Route path="*" element={<Navigate to="/" />} />
             </Routes>
         </>
-      );
+    );
 }
 
 export default App;
