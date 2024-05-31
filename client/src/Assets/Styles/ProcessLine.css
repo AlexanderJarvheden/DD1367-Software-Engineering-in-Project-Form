@@ -3,17 +3,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 15vh; /* Use viewport height for top margin */
-  padding: 0 15%; /* Add padding to prevent overlap with the menu */
+  margin-top: 15vh;
+  padding: 0 15%;
   box-sizing: border-box;
 }
 
 .process-line-header {
   display: flex;
   justify-content: space-between;
-  width: 90%; /* Use percentage for width */
+  width: 100%;
   align-items: flex-start;
   position: relative;
+  top: 1.5em;
 }
 
 .process-line-text-wrapper {
@@ -26,20 +27,48 @@
   color: var(--Dark-Deep-purple, #1E154C);
   text-align: center;
   font-family: Futura;
-  font-size: 1rem; /* Use relative units for font size */
+  font-size: 1rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 1.2em; /* Use relative units for line height */
-  letter-spacing: -0.05em; /* Adjusted letter spacing */
+  line-height: 1.2em;
+  letter-spacing: -0.05em;
+}
+
+.process-line-wrapper {
+  width: 100%;
+  position: relative;
+  margin-top: 2em;
+}
+
+.process-line {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 0.05em;
+  background-color: #9E9E9E;
+  position: relative;
+}
+
+.process-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-circle-placeholder svg {
+  width: 45px;
+  height: 45px;
 }
 
 .process-line-add-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: -1.0em; /* Use relative units for margin */
-  cursor: pointer; /* Indicate that it's clickable */
-  margin-left: 2.7em;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 1.8em;
 }
 
 .process-line-add {
@@ -47,18 +76,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 3em; /* Use relative units for width */
-  height: 3em; /* Use relative units for height */
-  background-color: #D6D3E3; /* Circle background color */
+  width: 45px;
+  height: 45px;
+  background-color: #D6D3E3;
   border-radius: 50%;
-  border: 0.15em solid #9B95B5; /* Use relative units for border */
+  border: 0.15em solid #9B95B5;
   position: relative;
+  top: 0.62em;
 }
 
 .add-icon {
   color: #908DA0;
   font-family: Inter;
-  font-size: 1.5em; /* Use relative units for font size */
+  font-size: 1.5em;
   font-style: normal;
   font-weight: 200;
   line-height: normal;
@@ -68,68 +98,145 @@
   transform: translate(-50%, -50%);
 }
 
+.add-text-wrapper {
+  margin-top: 10px; /* Add margin to move the text down */
+}
+
 .add-text {
   color: #908DA0;
   font-family: Inter;
-  font-size: 0.75em; /* Use relative units for font size */
+  font-size: 0.75em;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 400;
   line-height: normal;
-  margin-top: 0.4em; /* Use relative units for margin */
-}
-
-.process-line {
-  width: 90%; /* Adjust to match the header width */
-  height: 0.05em; /* Use relative units for height */
-  background-color: #9E9E9E;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25); /* Mimic drop shadow effect */
-  margin-top: 0.4em; /* Use relative units for margin */
-  position: relative;
-  display: flex;
-  align-items: center;
+  margin-top: 0.4em;
 }
 
 .curved-section {
   position: absolute;
   width: 2em;
   height: 4.0em;
-  border-right: 0.05em solid #9E9E9E;
-  border-bottom: 0.05em solid #9E9E9E;
-  border-top: 0.05em solid #9E9E9E;
+  border-right: 0.07em solid #9E9E9E;
+  border-bottom: 0.07em solid #9E9E9E;
+  border-top: 0.07em solid #9E9E9E;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
-  top: 0em; /* Adjust based on the position of the circles */
-  left: calc(97.3% + 1.57em); /* Adjust based on the position of the last circle */
-  animation: curvedSectionAnimation 5s forwards; /* Add animation */
+  top: 0em;
+  left: calc(100%);
+  animation: curvedSectionAnimation 5s forwards;
 }
 
 .straight-section {
   position: absolute;
-  width: calc(100% - 2em); /* Adjust based on the width of the container */
-  height: 0.03em;
+  width: calc(100% - 1.5em);
+  height: 0.05em;
   background-color: #9E9E9E;
-  top: 3.98em; /* Adjust based on the position of the curved section */
-  left: calc(5%); /* Adjust based on the position of the curved section */
-  animation: straightSectionAnimation 5s 5s forwards; /* Add animation with delay */
+  top: 3.95em;
+  right: calc(0%);
+  animation: straightSectionAnimation 5s 5s forwards;
+}
+
+.second-curved-section {
+  position: absolute;
+  width: 2em;
+  height: 4.0em;
+  border-left: 0.07em solid #9E9E9E;
+  border-bottom: 0.07em solid #9E9E9E;
+  border-top: 0.07em solid #9E9E9E;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  top: 3.95em;
+  left: calc(0%);
+  animation: curvedSectionAnimation 5s forwards;
+}
+
+.second-straight-section {
+  position: absolute;
+  width: calc(100% - 1.5em);
+  height: 0.05em;
+  background-color: #9E9E9E;
+  top: 7.85em;
+  right: calc(0%);
+  animation: straightSectionAnimation 5s 5s forwards;
+  display: flex;
+  justify-content: space-evenly; /* Ensure circles are evenly spaced */
+  align-items: center;
+}
+
+.third-curved-section {
+  position: absolute;
+  width: 2em;
+  height: 4.0em;
+  border-right: 0.07em solid #9E9E9E;
+  border-bottom: 0.07em solid #9E9E9E;
+  border-top: 0.07em solid #9E9E9E;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  top: 7.90em;
+  left: calc(100%);
+  animation: curvedSectionAnimation 5s forwards;
+}
+
+.third-straight-section {
+  position: absolute;
+  width: calc(100% - 1.5em);
+  height: 0.05em;
+  background-color: #9E9E9E;
+  top: 11.80em;
+  right: calc(0%);
+  animation: straightSectionAnimation 5s 5s forwards;
+}
+
+.fourth-curved-section {
+  position: absolute;
+  width: 2em;
+  height: 4.0em;
+  border-left: 0.07em solid #9E9E9E;
+  border-bottom: 0.07em solid #9E9E9E;
+  border-top: 0.07em solid #9E9E9E;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  top: 11.80em;
+  left: calc(0%);
+  animation: curvedSectionAnimation 5s forwards;
+}
+
+.fourth-straight-section {
+  position: absolute;
+  width: calc(100% - 1.5em);
+  height: 0.05em;
+  background-color: #9E9E9E;
+  top: 15.75em;
+  right: calc(0%);
+  animation: straightSectionAnimation 5s 5s forwards;
+  display: flex;
+  justify-content: space-evenly; /* Ensure circles are evenly spaced */
+  align-items: center;
+}
+
+.second-add-wrapper {
+  margin-left: 1.8em;
 }
 
 .circle-container {
   display: flex;
   justify-content: space-between;
-  width: 40%;
-  position: absolute;
-  top: 600px; /* Adjust the top position */
-  left: 300px; /* Adjust the left position */
+  width: 90%;
+  position: relative;
+  top: 25em;
+  left: 30%;
+  transform: translateX(-50%);
 }
 
 .addCircle {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 2.7em; /* Space between circles */
+  justify-content: center;
+  padding: 12%;
 }
 
-.circle svg {
+.process-circle svg {
   width: 45px;
   height: 45px;
   flex-shrink: 0;
@@ -141,28 +248,28 @@
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 100%; /* 12px */
+  line-height: 100%;
   letter-spacing: 1.2px;
   text-transform: uppercase;
-  margin-top: 0.5em; /* Add spacing between circle and text */
+  margin-top: 0.5em;
 }
 
 .red-circle svg {
-  fill: #FAE2E2; /* Adjust the fill color with transparency */
+  fill: #FAE2E2;
   stroke-width: 2px;
   stroke: #CD2626;
 }
 
 .yellow-circle svg {
-  fill: #FDEDBF; /* Adjust the fill color with transparency */
+  fill: #FDEDBF;
   stroke-width: 2px;
   stroke: #F9BB00;
 }
 
 .blue-circle svg {
-  fill: #D4EDED; /* Adjust the fill color with transparency */
+  fill: #D4EDED;
   stroke-width: 2px;
-  stroke: #049F9F; 
+  stroke: #049F9F;
 }
 
 .purple-circle svg {
@@ -177,10 +284,9 @@
   border-radius: 10px;
   background: #D9D9D9;
   position: absolute;
-  top: 700px; /* Adjust based on the position of the circles */
-  left: 50px;
-  right: 0;
-  margin: 0 auto;
+  top: 95%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .overlay {
@@ -189,11 +295,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Ensure it's on top */
+  z-index: 1000;
 }
 
 /* Media queries for different screen sizes */
@@ -203,8 +309,9 @@
   }
   .circle-container {
     width: 70%;
-    top: 600px; /* Adjust for smaller screens */
-    left: 200px;
+    top: 600px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .bottom-bar {
     width: 80%;
@@ -217,8 +324,9 @@
   }
   .circle-container {
     width: 60%;
-    top: 550px; /* Adjust for smaller screens */
-    left: 150px;
+    top: 550px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .bottom-bar {
     width: 80%;
@@ -231,8 +339,9 @@
   }
   .circle-container {
     width: 50%;
-    top: 500px; /* Adjust for smaller screens */
-    left: 100px;
+    top: 500px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .bottom-bar {
     width: 80%;
@@ -245,8 +354,9 @@
   }
   .circle-container {
     width: 80%;
-    top: 450px; /* Adjust for smaller screens */
-    left: 50px;
+    top: 450px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .bottom-bar {
     width: 80%;
