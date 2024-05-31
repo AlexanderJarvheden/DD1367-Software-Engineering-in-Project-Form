@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import '../Assets/Styles/LoginPage.css';
+import Navigationbar from './Navigationbar.js';
 
 //import left_icon from '../Assets/left.svg'
 
@@ -57,7 +58,8 @@ function LoginPage() {
     return (
 
         <div>
-            <div className='login-box'>
+            <Navigationbar/>
+            <div className='login-box' style={{top: '80px', position: 'relative'}}>
                 <span className="login-title">
                     Log in to use all tools!
                 </span>
