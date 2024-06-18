@@ -31,16 +31,19 @@ function App() {
     //     setLoggedIn(!loggedIn)
     // }
 
+    // Set user state to logged in
     const handleLogin = () => {
         setLoggedIn(true)
 
     }
 
+    // Set user state to logged out
     const handleLogout = () => {
         setLoggedIn(false)
     }
 
 
+    // Define the url for each page
     return (
         <>
             {/* {loggedIn ? <DashboardPage /> : <Navigationbar />} */}
