@@ -71,4 +71,4 @@ The LoopBox Platform is a web-based application designed to support the circular
 For more information on contributing to the LoopBox Platform project, please contact:
 
 - **Aziz Ali**: Full-stack developer - azizali@kth.se
-- **Alexander Järvheden**: Project leader & Fullstack developer - jarvh@kth.se fakekonton@yahoo.se
+- **Alexander Järvheden**: Project leader & Fullstack developer - jarvh@kth.se
